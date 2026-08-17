@@ -1,6 +1,7 @@
 package pe.com.upeu.PharmaBackend.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.com.upeu.PharmaBackend.entity.Categoria;
@@ -17,5 +18,9 @@ public class CategoriaController {
     @GetMapping
     public Iterable<Categoria> getCategorias() {
         return categoriaService.readAll();
+    }
+    @GetMapping("/{id}")
+    public Categoria getCategorias( @PathVariable Long id) {
+        return categoriaService.read(id).get();
     }
 }
