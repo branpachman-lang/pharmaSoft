@@ -1,0 +1,16 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: PharmaBackend
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1522/FREE
+    username: system
+    password: oracle123
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.OracleDialect
