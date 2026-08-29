@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -45,4 +45,7 @@ public class Categoria {
     public void preUpdate() {
         this.fechaModificacion = LocalDateTime.now();
     }
+
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
+    private List<Producto> productos;
 }
