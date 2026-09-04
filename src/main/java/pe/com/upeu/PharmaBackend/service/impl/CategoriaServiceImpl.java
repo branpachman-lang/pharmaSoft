@@ -7,11 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.CategoriaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.CategoriaResponseDTO;
 import pe.com.upeu.PharmaBackend.entity.Categoria;
-import pe.com.upeu.PharmaBackend.exception.RecursosNoEncontradoException;
+import pe.com.upeu.PharmaBackend.exception.RecursoNoEncontradoException;
 import pe.com.upeu.PharmaBackend.exception.ReglaNegocioException;
 import pe.com.upeu.PharmaBackend.repository.CategoriaRepository;
 import pe.com.upeu.PharmaBackend.service.service.CategoriaService;
-import java.util.Optional;
 
 
 @Service
@@ -45,7 +44,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     public CategoriaResponseDTO update(Long aLong, CategoriaRequestDTO t) {
 
         Categoria categoria = categoriaRepository.findById(aLong).orElseThrow(()->
-        new RecursosNoEncontradoException("Categoria no encontrada con el ID: " + aLong)
+        new RecursoNoEncontradoException("Categoria no encontrada con el ID: " + aLong)
         );
         categoria.setNombre(t.getNombre());
         categoria.setDescripcion(t.getDescripcion());
@@ -60,7 +59,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     public CategoriaResponseDTO read(Long aLong) {
         Categoria categoria = categoriaRepository.findById(aLong).
                 orElseThrow(()->
-        new RecursosNoEncontradoException("Categoria no encontrada con el ID: " + aLong));
+        new RecursoNoEncontradoException("Categoria no encontrada con el ID: " + aLong));
         return convertirResponse(categoria);
     }
 
@@ -68,7 +67,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Transactional
     public void delete(Long aLong) {
         Categoria categoria = categoriaRepository.findById(aLong).orElseThrow(()->
-                new RecursosNoEncontradoException("Categoria no encontrada con el ID: " + aLong)
+                new RecursoNoEncontradoException("Categoria no encontrada con el ID: " + aLong)
         );
         categoriaRepository.delete(categoria);
     }

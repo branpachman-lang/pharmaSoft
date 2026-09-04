@@ -6,7 +6,7 @@ import pe.com.upeu.PharmaBackend.dto.ProductoRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.ProductoResponseDTO;
 import pe.com.upeu.PharmaBackend.entity.Categoria;
 import pe.com.upeu.PharmaBackend.entity.Producto;
-import pe.com.upeu.PharmaBackend.exception.RecursosNoEncontradoException;
+import pe.com.upeu.PharmaBackend.exception.RecursoNoEncontradoException;
 import pe.com.upeu.PharmaBackend.exception.ReglaNegocioException;
 import pe.com.upeu.PharmaBackend.repository.CategoriaRepository;
 import pe.com.upeu.PharmaBackend.repository.ProductoRepository;
@@ -32,7 +32,7 @@ public class ProductoServiceImpl implements ProductoService {
         }
 
         Categoria categoria = categoriaRepository.findById(t.getCategoriaId()).orElseThrow(() ->
-                new RecursosNoEncontradoException("Categoría no encontrada con el ID: " + t.getCategoriaId())
+                new RecursoNoEncontradoException("Categoría no encontrada con el ID: " + t.getCategoriaId())
         );
 
         Producto producto = new Producto();
@@ -51,11 +51,11 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional
     public ProductoResponseDTO update(Long id, ProductoRequestDTO t) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
-                new RecursosNoEncontradoException("Producto no encontrado con el ID: " + id)
+                new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
         );
 
         Categoria categoria = categoriaRepository.findById(t.getCategoriaId()).orElseThrow(() ->
-                new RecursosNoEncontradoException("Categoría no encontrada con el ID: " + t.getCategoriaId())
+                new RecursoNoEncontradoException("Categoría no encontrada con el ID: " + t.getCategoriaId())
         );
 
         producto.setNombre(t.getNombre());
@@ -73,7 +73,7 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional(readOnly = true)
     public ProductoResponseDTO read(Long id) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
-                new RecursosNoEncontradoException("Producto no encontrado con el ID: " + id)
+                new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
         );
         return convertirResponse(producto);
     }
@@ -82,7 +82,7 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional
     public void delete(Long id) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
-                new RecursosNoEncontradoException("Producto no encontrado con el ID: " + id)
+                new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
         );
         productoRepository.delete(producto);
     }
