@@ -1,5 +1,6 @@
 package pe.com.upeu.PharmaBackend.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,19 +15,14 @@ import pe.com.upeu.PharmaBackend.service.service.ClienteService;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class ClienteServiceImpl
         implements ClienteService {
 
     private static final Logger log =
             LoggerFactory.getLogger(ClienteServiceImpl.class);
-
     private final ClienteRepository clienteRepository;
-
-    public ClienteServiceImpl(
-            ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
 
     @Override
     @Transactional
