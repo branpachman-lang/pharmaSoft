@@ -19,4 +19,8 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     enabled: true
+logging:
+  level:
+    root: INFO
+    pe.com.upeu.PharmaBackend: DEBUG
 
