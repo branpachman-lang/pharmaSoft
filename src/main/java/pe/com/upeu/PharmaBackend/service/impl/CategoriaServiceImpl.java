@@ -2,6 +2,7 @@ package pe.com.upeu.PharmaBackend.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.CategoriaRequestDTO;
@@ -65,11 +66,20 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     @Transactional
-    public void delete(Long aLong) {
-        Categoria categoria = categoriaRepository.findById(aLong).orElseThrow(()->
-                new RecursoNoEncontradoException("Categoria no encontrada con el ID: " + aLong)
-        );
-        categoriaRepository.delete(categoria);
+    public void delete(Long id) {
+        Categoria categoria = categoriaRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException(
+                        "Categoria no encontrada con el ID: " + id
+                ));
+
+        try {
+            categoriaRepository.delete(categoria);
+            categoriaRepository.flush();
+        } catch (DataIntegrityViolationException e) {
+            throw new ReglaNegocioException(
+                    "No se puede eliminar la categoría porque tiene registros asociados"
+            );
+        }
     }
 
     @Override

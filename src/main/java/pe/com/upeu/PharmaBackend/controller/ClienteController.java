@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.com.upeu.PharmaBackend.dto.ClienteRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.ClienteResponseDTO;
+import pe.com.upeu.PharmaBackend.dto.PaginaResponseDTO;
 import pe.com.upeu.PharmaBackend.service.service.ClienteService;
 
 
@@ -16,7 +17,6 @@ public class ClienteController {
 
     public ClienteController(
             ClienteService clienteService) {
-
         this.clienteService = clienteService;
     }
 
@@ -24,24 +24,24 @@ public class ClienteController {
     public ResponseEntity<ClienteResponseDTO> create(
             @Valid
             @RequestBody ClienteRequestDTO request) {
-
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(clienteService.create(request));
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<ClienteResponseDTO>> readAll() {
-
-        return ResponseEntity.ok(
-                clienteService.readAll()
-        );
+    public ResponseEntity<PaginaResponseDTO<ClienteResponseDTO>> readAll(
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue = "10") int tamanio,
+            @RequestParam(defaultValue = "apellidos") String ordenarPor,
+            @RequestParam(defaultValue = "asc") String direccion) {
+        return ResponseEntity.ok(clienteService.listarPaginado(
+                pagina, tamanio, ordenarPor, direccion));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> read(
             @PathVariable Long id) {
-
         return ResponseEntity.ok(
                 clienteService.read(id)
         );
@@ -52,7 +52,6 @@ public class ClienteController {
             @PathVariable Long id,
             @Valid
             @RequestBody ClienteRequestDTO request) {
-
         return ResponseEntity.ok(
                 clienteService.update(id, request)
         );
@@ -61,9 +60,7 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
             @PathVariable Long id) {
-
         clienteService.delete(id);
-
         return ResponseEntity
                 .noContent()
                 .build();

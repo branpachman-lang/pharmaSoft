@@ -30,11 +30,9 @@ public class ProductoServiceImpl implements ProductoService {
         if(productoRepository.existsByNombreIgnoreCase(nombre)) {
             throw new ReglaNegocioException("Ya existe un producto con el nombre: " + nombre);
         }
-
         Categoria categoria = categoriaRepository.findById(t.getCategoriaId()).orElseThrow(() ->
                 new RecursoNoEncontradoException("Categoría no encontrada con el ID: " + t.getCategoriaId())
         );
-
         Producto producto = new Producto();
         producto.setNombre(nombre);
         producto.setDescripcion(t.getDescripcion());

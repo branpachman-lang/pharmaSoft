@@ -1,6 +1,5 @@
 package pe.com.upeu.PharmaBackend.service.generic;
 
-import java.util.Optional;
 
 public interface CrudService <REQ,RES,ID>{
     RES create(REQ t);

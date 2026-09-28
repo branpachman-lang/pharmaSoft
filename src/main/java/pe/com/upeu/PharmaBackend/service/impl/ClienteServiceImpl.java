@@ -1,12 +1,16 @@
 package pe.com.upeu.PharmaBackend.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.ClienteRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.ClienteResponseDTO;
+import pe.com.upeu.PharmaBackend.dto.PaginaResponseDTO;
 import pe.com.upeu.PharmaBackend.entity.Cliente;
 import pe.com.upeu.PharmaBackend.exception.RecursoNoEncontradoException;
 import pe.com.upeu.PharmaBackend.exception.ReglaNegocioException;
@@ -14,6 +18,7 @@ import pe.com.upeu.PharmaBackend.repository.ClienteRepository;
 import pe.com.upeu.PharmaBackend.service.service.ClienteService;
 
 import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
@@ -22,12 +27,13 @@ public class ClienteServiceImpl
 
     private static final Logger log =
             LoggerFactory.getLogger(ClienteServiceImpl.class);
+    private static final Set<String> CAMPOS_ORDENABLES =
+            Set.of("id", "dni", "nombres", "apellidos", "email");
     private final ClienteRepository clienteRepository;
 
     @Override
     @Transactional
-    public ClienteResponseDTO create(
-            ClienteRequestDTO request) {
+    public ClienteResponseDTO create(ClienteRequestDTO request) {
 
         log.info(
                 "Registrando cliente con DNI={}",
@@ -112,14 +118,48 @@ public class ClienteServiceImpl
     }
 
     @Override
-    @Transactional
-    public ClienteResponseDTO update(
-            Long id,
-            ClienteRequestDTO request) {
+    @Transactional(readOnly = true)
+    public PaginaResponseDTO<ClienteResponseDTO> listarPaginado(
+            int pagina, int tamanio, String ordenarPor, String direccion) {
+        if (pagina < 0 || tamanio < 1) {
+            throw new ReglaNegocioException(
+                    "La página debe ser mayor o igual a 0 y el tamaño mayor que 0");
+        }
+        if (!CAMPOS_ORDENABLES.contains(ordenarPor)) {
+            throw new ReglaNegocioException(
+                    "El campo de ordenamiento '" + ordenarPor
+                            + "' no está permitido. Campos válidos: " + CAMPOS_ORDENABLES);
+        }
+        if (!direccion.equalsIgnoreCase("asc")
+                && !direccion.equalsIgnoreCase("desc")) {
+            throw new ReglaNegocioException(
+                    "La dirección de ordenamiento '" + direccion
+                            + "' no está permitida. Valores válidos: asc, desc");
+        }
 
-        Cliente cliente =
-                clienteRepository.findById(id)
-                        .orElseThrow(() ->
+        Sort sort = direccion.equalsIgnoreCase("asc")
+                ? Sort.by(ordenarPor).ascending()
+                : Sort.by(ordenarPor).descending();
+        Page<Cliente> resultado = clienteRepository.findAll(
+                PageRequest.of(pagina, tamanio, sort));
+        List<ClienteResponseDTO> contenido = resultado.getContent()
+                .stream()
+                .map(this::convertirResponse)
+                .toList();
+        return new PaginaResponseDTO<>(
+                contenido,
+                resultado.getNumber(),
+                resultado.getSize(),
+                resultado.getTotalElements(),
+                resultado.getTotalPages(),
+                resultado.isLast());
+    }
+
+    @Override
+    @Transactional
+    public ClienteResponseDTO update(Long id, ClienteRequestDTO request) {
+
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() ->
                                 new RecursoNoEncontradoException(
                                         "Cliente no encontrado con id: " + id
                                 )
@@ -191,10 +231,15 @@ public class ClienteServiceImpl
                                 )
                         );
 
-        clienteRepository.delete(cliente);
+        if (!cliente.getEstado()) {
+            throw new ReglaNegocioException(
+                    "El cliente ya está inactivo: " + id);
+        }
+        cliente.setEstado(false);
+        clienteRepository.save(cliente);
 
         log.info(
-                "Cliente id={} eliminado correctamente",
+                "Cliente id={} dado de baja correctamente",
                 id
         );
     }
