@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.com.upeu.PharmaBackend.dto.CategoriaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.CategoriaResponseDTO;
+import pe.com.upeu.PharmaBackend.dto.PaginaResponseDTO;
 import pe.com.upeu.PharmaBackend.service.service.CategoriaService;
 
 @RestController
@@ -18,9 +19,13 @@ public class CategoriaController {
 
     //Listado de categorias
     @GetMapping
-    public ResponseEntity<Iterable<CategoriaResponseDTO>> findAll() {
+    public ResponseEntity<PaginaResponseDTO<CategoriaResponseDTO>> findAll(
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue = "10") int tamanio,
+            @RequestParam(defaultValue = "nombre") String ordenarPor,
+            @RequestParam(defaultValue = "asc") String direccion) {
         return ResponseEntity.ok(
-                categoriaService.readAll()
+                categoriaService.listarPaginado(pagina, tamanio, ordenarPor, direccion)
         );
     }
 

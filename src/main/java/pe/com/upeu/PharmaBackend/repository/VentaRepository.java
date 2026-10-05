@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface VentaRepository extends JpaRepository<Venta, Long> {
+    boolean existsByClienteId(Long clienteId);
 
     @Query("""
             select distinct v

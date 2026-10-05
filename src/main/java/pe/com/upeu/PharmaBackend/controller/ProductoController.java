@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.com.upeu.PharmaBackend.dto.ProductoRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.ProductoResponseDTO;
+import pe.com.upeu.PharmaBackend.dto.PaginaResponseDTO;
 import pe.com.upeu.PharmaBackend.service.service.ProductoService;
 
 @RestController
@@ -19,8 +20,12 @@ public class ProductoController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<ProductoResponseDTO>> findAll() {
-        return ResponseEntity.ok(productoService.readAll());
+    public ResponseEntity<PaginaResponseDTO<ProductoResponseDTO>> findAll(
+            @RequestParam(defaultValue = "0") int pagina,
+            @RequestParam(defaultValue = "10") int tamanio,
+            @RequestParam(defaultValue = "nombre") String ordenarPor,
+            @RequestParam(defaultValue = "asc") String direccion) {
+        return ResponseEntity.ok(productoService.listarPaginado(pagina, tamanio, ordenarPor, direccion));
     }
 
     @GetMapping("/{id}")

@@ -15,6 +15,7 @@ import pe.com.upeu.PharmaBackend.entity.Cliente;
 import pe.com.upeu.PharmaBackend.exception.RecursoNoEncontradoException;
 import pe.com.upeu.PharmaBackend.exception.ReglaNegocioException;
 import pe.com.upeu.PharmaBackend.repository.ClienteRepository;
+import pe.com.upeu.PharmaBackend.repository.VentaRepository;
 import pe.com.upeu.PharmaBackend.service.service.ClienteService;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class ClienteServiceImpl
     private static final Set<String> CAMPOS_ORDENABLES =
             Set.of("id", "dni", "nombres", "apellidos", "email");
     private final ClienteRepository clienteRepository;
+    private final VentaRepository ventaRepository;
 
     @Override
     @Transactional
@@ -140,6 +142,7 @@ public class ClienteServiceImpl
         Sort sort = direccion.equalsIgnoreCase("asc")
                 ? Sort.by(ordenarPor).ascending()
                 : Sort.by(ordenarPor).descending();
+        if (!ordenarPor.equals("id")) sort = sort.and(Sort.by("id"));
         Page<Cliente> resultado = clienteRepository.findAll(
                 PageRequest.of(pagina, tamanio, sort));
         List<ClienteResponseDTO> contenido = resultado.getContent()
@@ -234,6 +237,10 @@ public class ClienteServiceImpl
         if (!cliente.getEstado()) {
             throw new ReglaNegocioException(
                     "El cliente ya está inactivo: " + id);
+        }
+        if (ventaRepository.existsByClienteId(id)) {
+            throw new ReglaNegocioException(
+                    "No se puede eliminar el cliente porque tiene ventas asociadas");
         }
         cliente.setEstado(false);
         clienteRepository.save(cliente);
