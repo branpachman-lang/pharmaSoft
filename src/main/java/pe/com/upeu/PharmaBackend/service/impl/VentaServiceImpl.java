@@ -1,6 +1,8 @@
 package pe.com.upeu.PharmaBackend.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +10,7 @@ import pe.com.upeu.PharmaBackend.dto.DetalleVentaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.DetalleVentaResponseDTO;
 import pe.com.upeu.PharmaBackend.dto.VentaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.VentaResponseDTO;
+import pe.com.upeu.PharmaBackend.dto.PaginaResponseDTO;
 import pe.com.upeu.PharmaBackend.entity.Cliente;
 import pe.com.upeu.PharmaBackend.entity.DetalleVenta;
 import pe.com.upeu.PharmaBackend.entity.Producto;
@@ -73,10 +76,11 @@ public class VentaServiceImpl implements VentaService {
                 throw new ReglaNegocioException("El producto "+ producto.getNombre()+ " se encuentra inactivo");
             }
 
-            if (producto.getStock()< item.getCantidad()) {
-
-                throw new ReglaNegocioException("Stock insuficiente para "+ producto.getNombre()+ ". Disponible: "+ producto.getStock()
-                        + ", solicitado: "+ item.getCantidad());
+            // El UPDATE condicional decide con el stock actual de la base de datos.
+            // Toda la transacción se revierte si falla una línea posterior.
+            if (productoRepository.descontarStockSiAlcanza(producto.getId(), item.getCantidad()) != 1) {
+                throw new ReglaNegocioException("Stock insuficiente para " + producto.getNombre()
+                        + ". Vuelve a revisar las unidades disponibles.");
             }
 
             BigDecimal subtotal = producto.getPrecio().multiply(BigDecimal.valueOf(item.getCantidad()));
@@ -92,7 +96,6 @@ public class VentaServiceImpl implements VentaService {
 
             total = total.add(subtotal);
 
-            producto.setStock(producto.getStock()- item.getCantidad());
         }
 
         venta.setTotal(total);
@@ -119,13 +122,19 @@ public class VentaServiceImpl implements VentaService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<VentaResponseDTO> buscarVentas(
+    public PaginaResponseDTO<VentaResponseDTO> buscarVentas(
             Long clienteId,
             EstadoVenta estado,
             LocalDate desde,
             LocalDate hasta,
+            int pagina,
+            int tamanio,
             String ordenarPor,
             String direccion) {
+
+        if (pagina < 0 || tamanio < 1 || tamanio > 100) {
+            throw new ReglaNegocioException("La página debe ser mayor o igual a 0 y el tamaño debe estar entre 1 y 100");
+        }
 
         long inicio = System.currentTimeMillis();
 
@@ -145,6 +154,9 @@ public class VentaServiceImpl implements VentaService {
         }
 
         Sort sort = construirSort(ordenarPor, direccion);
+        if (sort.getOrderFor("id") == null) {
+            sort = sort.and(Sort.by(Sort.Direction.DESC, "id"));
+        }
 
         LocalDateTime desdeHora = (desde == null)
                 ? null
@@ -154,21 +166,22 @@ public class VentaServiceImpl implements VentaService {
                 ? null
                 : hasta.atTime(LocalTime.MAX);
 
-        List<VentaResponseDTO> resultado =
+        Page<Venta> resultado =
                 ventaRepository
-                        .buscar(clienteId, estado, desdeHora, hastaHora, sort)
-                        .stream()
-                        .map(this::convertirResponse)
-                        .toList();
+                        .buscar(clienteId, estado, desdeHora, hastaHora,
+                                PageRequest.of(pagina, tamanio, sort));
 
         log.info("Fin buscar ventas | clienteId={} | estado={} | "
                         + "desde={} | hasta={} | orden={} {} | "
                         + "filas={} | duracionMs={}",
                 clienteId, estado, desde, hasta, ordenarPor, direccion,
-                resultado.size(),
+                resultado.getNumberOfElements(),
                 System.currentTimeMillis() - inicio);
 
-        return resultado;
+        return new PaginaResponseDTO<>(
+                resultado.getContent().stream().map(this::convertirResponse).toList(),
+                resultado.getNumber(), resultado.getSize(), resultado.getTotalElements(),
+                resultado.getTotalPages(), resultado.isLast());
     }
 
     private Sort construirSort(String ordenarPor, String direccion) {
