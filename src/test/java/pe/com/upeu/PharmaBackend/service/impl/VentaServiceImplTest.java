@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import pe.com.upeu.PharmaBackend.dto.DetalleVentaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.VentaRequestDTO;
 import pe.com.upeu.PharmaBackend.entity.Cliente;
@@ -83,7 +84,7 @@ class VentaServiceImplTest {
         venta.setFecha(LocalDateTime.of(2026, 10, 11, 12, 0));
         venta.setEstado(EstadoVenta.REGISTRADA);
         venta.setTotal(new BigDecimal("16.50"));
-        when(ventas.buscar(eq(1L), eq(EstadoVenta.REGISTRADA), any(), any(), any(Pageable.class)))
+        when(ventas.findAll(any(Specification.class), any(Pageable.class)))
                 .thenReturn(new PageImpl<>(List.of(venta),
                         org.springframework.data.domain.PageRequest.of(1, 5), 6));
 
@@ -96,7 +97,7 @@ class VentaServiceImplTest {
         assertEquals(6, resultado.totalElementos());
         assertEquals(9L, resultado.contenido().getFirst().getId());
         ArgumentCaptor<Pageable> captor = ArgumentCaptor.forClass(Pageable.class);
-        verify(ventas).buscar(eq(1L), eq(EstadoVenta.REGISTRADA), any(), any(), captor.capture());
+        verify(ventas).findAll(any(Specification.class), captor.capture());
         assertEquals(1, captor.getValue().getPageNumber());
         assertEquals(5, captor.getValue().getPageSize());
         assertEquals("fecha: DESC,id: DESC", captor.getValue().getSort().toString());

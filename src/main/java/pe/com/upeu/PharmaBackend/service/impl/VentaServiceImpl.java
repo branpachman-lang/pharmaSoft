@@ -1,9 +1,11 @@
 package pe.com.upeu.PharmaBackend.service.impl;
+import jakarta.persistence.criteria.Predicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.DetalleVentaRequestDTO;
@@ -27,6 +29,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -166,10 +169,25 @@ public class VentaServiceImpl implements VentaService {
                 ? null
                 : hasta.atTime(LocalTime.MAX);
 
-        Page<Venta> resultado =
-                ventaRepository
-                        .buscar(clienteId, estado, desdeHora, hastaHora,
-                                PageRequest.of(pagina, tamanio, sort));
+        Specification<Venta> filtros = (venta, consulta, criterio) -> {
+            List<Predicate> condiciones = new ArrayList<>();
+            if (clienteId != null) {
+                condiciones.add(criterio.equal(venta.get("cliente").get("id"), clienteId));
+            }
+            if (estado != null) {
+                condiciones.add(criterio.equal(venta.get("estado"), estado));
+            }
+            if (desdeHora != null) {
+                condiciones.add(criterio.greaterThanOrEqualTo(venta.get("fecha"), desdeHora));
+            }
+            if (hastaHora != null) {
+                condiciones.add(criterio.lessThanOrEqualTo(venta.get("fecha"), hastaHora));
+            }
+            return criterio.and(condiciones.toArray(Predicate[]::new));
+        };
+
+        Page<Venta> resultado = ventaRepository.findAll(
+                filtros, PageRequest.of(pagina, tamanio, sort));
 
         log.info("Fin buscar ventas | clienteId={} | estado={} | "
                         + "desde={} | hasta={} | orden={} {} | "

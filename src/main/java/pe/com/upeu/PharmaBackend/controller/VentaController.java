@@ -59,8 +59,8 @@ public class VentaController {
     /*
      * Búsqueda de ventas con filtros combinados.
      *
-     * Todos los parámetros son opcionales; los que no se envían no
-     * filtran. Sin coincidencias responde 200 con arreglo vacío.
+     * Todos los filtros son opcionales. Sin filtros se devuelven todas
+     * las ventas, y sin coincidencias una página con contenido vacío.
      */
     @GetMapping("/buscar")
     public ResponseEntity<PaginaResponseDTO<VentaResponseDTO>> buscar(
