@@ -5,6 +5,12 @@ spring:
     url: jdbc:oracle:thin:@//localhost:1522/FREEPDB1
     username: pharmaDB
     password: 123456
+  flyway:
+    # En esta base de clase V2__seguridad.sql ya se ejecuto manualmente.
+    # Habilitar Flyway solo al preparar una base nueva sin esas tablas.
+    enabled: ${FLYWAY_ENABLED:false}
+    baseline-on-migrate: true
+    baseline-version: 1
   jpa:
     database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
@@ -23,4 +29,8 @@ logging:
   level:
     root: INFO
     pe.com.upeu.PharmaBackend: DEBUG
-
+# JWT de clase: en produccion el secreto llega por variable de entorno.
+app:
+  jwt:
+    secret: w9Z6dP/dzykNH/uiI3Z/KGjBlP0H4Ji+Tuq4fm2cTNuLD4jWafu1gBL74V2SJEvy
+    expiracion-minutos: 5
