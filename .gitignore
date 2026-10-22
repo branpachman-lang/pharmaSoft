@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Informes y evidencias locales de las practicas
+/docs/
+
+# Colecciones exportadas de Postman
+/postman/*.json
+/postman/**/*.json
