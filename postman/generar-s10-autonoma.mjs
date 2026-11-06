@@ -71,7 +71,8 @@ request('T-04', 'Token', 'Token vencido', 'GET', '/auth/me', 'Bearer {{tokenExpi
 request('T-05', 'Token', 'Inspección del payload JWT', 'GET', '/auth/me', admin, undefined, 200,
   'En Postman Console inspecciona solo el objeto claims; oculta el JWT completo en la captura.',
   "const jwt=pm.collectionVariables.get('tokenAdmin'); if(jwt){const claims=JSON.parse(atob(jwt.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))); console.log({sub:claims.sub,authorities:claims.authorities,iat:claims.iat,exp:claims.exp}); pm.test('Claims esenciales',()=>pm.expect(claims).to.include.all.keys('sub','authorities','iat','exp')); pm.test('Sin contraseña',()=>pm.expect(JSON.stringify(claims).toLowerCase()).not.to.include('password'));}");
-request('T-06', 'Token propio', 'Bearer vacío', 'GET', '/auth/me', 'Bearer ', undefined, 401);
+request('T-06', 'Token propio', 'Bearer sin token', 'GET', '/auth/me', 'Bearer', undefined, 401,
+  'Encabezado Authorization con el prefijo Bearer, pero sin JWT; la API debe responder que se debe iniciar sesión.');
 
 request('P-01', 'Permisos', 'Vendedor crea categoría', 'POST', '/categorias', vendedor, categoria, 403);
 request('P-01', 'Permisos', 'Vendedor modifica categoría', 'PUT', '/categorias/{{categoriaId}}', vendedor, categoria, 403);

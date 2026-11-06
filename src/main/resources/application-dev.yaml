@@ -26,11 +26,12 @@ springdoc:
   api-docs:
     enabled: true
 logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%X{requestId}] %logger{36} - %msg%n"
   level:
     root: INFO
     pe.com.upeu.PharmaBackend: DEBUG
-# JWT de clase: en produccion el secreto llega por variable de entorno.
 app:
   jwt:
     secret: w9Z6dP/dzykNH/uiI3Z/KGjBlP0H4Ji+Tuq4fm2cTNuLD4jWafu1gBL74V2SJEvy
-    expiracion-minutos: 5
+    expiracion-minutos: 60

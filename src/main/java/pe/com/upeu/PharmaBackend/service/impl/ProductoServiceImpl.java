@@ -3,6 +3,8 @@ package pe.com.upeu.PharmaBackend.service.impl;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.ProductoRequestDTO;
@@ -32,6 +34,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public ProductoResponseDTO create(ProductoRequestDTO t) {
         String nombre = t.getNombre().trim();
         if(productoRepository.existsByNombreIgnoreCase(nombre)) {
@@ -55,6 +58,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public ProductoResponseDTO update(Long id, ProductoRequestDTO t) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
                 new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
@@ -83,6 +87,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos", key = "'id-' + #id")
     public ProductoResponseDTO read(Long id) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
                 new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
@@ -92,6 +97,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional
+    @CacheEvict(cacheNames = "productos", allEntries = true)
     public void delete(Long id) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
                 new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
@@ -105,6 +111,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos", key = "'todas'")
     public Iterable<ProductoResponseDTO> readAll() {
         return productoRepository.findAll().stream()
                 .map(this::convertirResponse)
@@ -113,6 +120,8 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos",
+            key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion")
     public PaginaResponseDTO<ProductoResponseDTO> listarPaginado(
             int pagina, int tamanio, String ordenarPor, String direccion) {
         if (pagina < 0 || tamanio < 1) {

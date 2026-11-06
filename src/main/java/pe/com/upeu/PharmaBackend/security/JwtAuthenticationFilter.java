@@ -83,7 +83,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             log.warn("Token de un usuario que ya no existe en {}", request.getRequestURI());
             request.setAttribute(ATRIBUTO_ERROR, "El usuario del token no existe");
         } catch (JwtException | IllegalArgumentException ex) {
-            log.warn("Token inválido en {}: {}", request.getRequestURI(), ex.getMessage());
+            log.warn("Token inválido en {}", request.getRequestURI());
             request.setAttribute(ATRIBUTO_ERROR, "El token no es válido");
         }
         filterChain.doFilter(request, response);
