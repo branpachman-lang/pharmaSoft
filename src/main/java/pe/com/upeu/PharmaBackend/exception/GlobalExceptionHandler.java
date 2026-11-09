@@ -15,6 +15,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.AuthenticationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
@@ -34,7 +35,7 @@ public class GlobalExceptionHandler {
                 "Not Found",
                 ex.getMessage(),
                 request.getRequestURI(),
-                null
+                null, MDC.get("requestId")
         );
 
         return ResponseEntity
@@ -58,7 +59,7 @@ public class GlobalExceptionHandler {
                 "Conflict",
                 ex.getMessage(),
                 request.getRequestURI(),
-                null
+                null, MDC.get("requestId")
         );
 
         return ResponseEntity
@@ -94,7 +95,7 @@ public class GlobalExceptionHandler {
                 "Bad Request",
                 "Existen errores de validación",
                 request.getRequestURI(),
-                validationErrors
+                validationErrors, MDC.get("requestId")
         );
 
         return ResponseEntity
@@ -120,7 +121,7 @@ public class GlobalExceptionHandler {
                 "Unauthorized",
                 "Usuario o contraseña incorrectos",
                 request.getRequestURI(),
-                null
+                null, MDC.get("requestId")
         );
         return ResponseEntity
                 .status(HttpStatus.UNAUTHORIZED)
@@ -144,10 +145,33 @@ public class GlobalExceptionHandler {
                 "Forbidden",
                 "No tiene permisos para realizar esta operación",
                 request.getRequestURI(),
-                null
+                null, MDC.get("requestId")
         );
         return ResponseEntity
                 .status(HttpStatus.FORBIDDEN)
                 .body(error);
+    }
+    @ExceptionHandler({org.springframework.web.method.annotation.MethodArgumentTypeMismatchException.class,
+            org.springframework.http.converter.HttpMessageNotReadableException.class})
+    public ResponseEntity<ErrorResponseDTO> handleInvalidInput(Exception ex, HttpServletRequest request) {
+        return ResponseEntity.badRequest().body(new ErrorResponseDTO(LocalDateTime.now(), 400,
+                "Bad Request", "La solicitud contiene un formato inválido", request.getRequestURI(),
+                null, MDC.get("requestId")));
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponseDTO> handleUnexpected(Exception ex, HttpServletRequest request) {
+        if (ex instanceof org.springframework.web.ErrorResponse webError) {
+            var status = webError.getStatusCode();
+            return ResponseEntity.status(status).headers(webError.getHeaders())
+                    .body(new ErrorResponseDTO(LocalDateTime.now(), status.value(),
+                            "HTTP Error", "La solicitud no pudo procesarse", request.getRequestURI(),
+                            null, MDC.get("requestId")));
+        }
+        // La clase del fallo permite diagnosticar sin volcar cuerpos, SQL ni secretos.
+        log.error("Error no controlado en {} | tipo={}", request.getRequestURI(), ex.getClass().getSimpleName());
+        return ResponseEntity.internalServerError().body(new ErrorResponseDTO(LocalDateTime.now(), 500,
+                "Internal Server Error", "No se pudo completar la operación", request.getRequestURI(),
+                null, MDC.get("requestId")));
     }
 }

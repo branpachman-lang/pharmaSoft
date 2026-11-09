@@ -15,7 +15,7 @@ spring:
     type: redis
     cache-names: categorias, productos
     redis:
-      time-to-live: 10m
+      time-to-live: ${CACHE_TTL:10m}
       enable-statistics: true
 
 management:

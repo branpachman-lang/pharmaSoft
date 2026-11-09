@@ -17,4 +17,5 @@ public class    ErrorResponseDTO {
     private String message;
     private String path;
     private Map<String, String> validationErrors;
+    private String requestId;
 }

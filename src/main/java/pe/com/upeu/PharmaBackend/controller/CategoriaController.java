@@ -23,9 +23,10 @@ public class CategoriaController {
             @RequestParam(defaultValue = "0") int pagina,
             @RequestParam(defaultValue = "10") int tamanio,
             @RequestParam(defaultValue = "nombre") String ordenarPor,
-            @RequestParam(defaultValue = "asc") String direccion) {
+            @RequestParam(defaultValue = "asc") String direccion,
+            @RequestParam(defaultValue = "false") boolean soloActivas) {
         return ResponseEntity.ok(
-                categoriaService.listarPaginado(pagina, tamanio, ordenarPor, direccion)
+                categoriaService.listarPaginado(pagina, tamanio, ordenarPor, direccion, soloActivas)
         );
     }
 

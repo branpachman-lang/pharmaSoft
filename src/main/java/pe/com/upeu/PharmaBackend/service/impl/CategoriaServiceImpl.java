@@ -113,6 +113,15 @@ public class CategoriaServiceImpl implements CategoriaService {
             key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion")
     public PaginaResponseDTO<CategoriaResponseDTO> listarPaginado(
             int pagina, int tamanio, String ordenarPor, String direccion) {
+        return listarPaginado(pagina, tamanio, ordenarPor, direccion, false);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "categorias",
+            key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion + '-activas-' + #soloActivas")
+    public PaginaResponseDTO<CategoriaResponseDTO> listarPaginado(
+            int pagina, int tamanio, String ordenarPor, String direccion, boolean soloActivas) {
         if (pagina < 0 || tamanio < 1) {
             throw new ReglaNegocioException("La página debe ser mayor o igual a 0 y el tamaño mayor que 0");
         }
@@ -128,7 +137,9 @@ public class CategoriaServiceImpl implements CategoriaService {
         Sort sort = direccion.equalsIgnoreCase("asc")
                 ? Sort.by(ordenarPor).ascending() : Sort.by(ordenarPor).descending();
         if (!ordenarPor.equals("id")) sort = sort.and(Sort.by("id"));
-        Page<Categoria> resultado = categoriaRepository.findAll(PageRequest.of(pagina, tamanio, sort));
+        var solicitud = PageRequest.of(pagina, tamanio, sort);
+        Page<Categoria> resultado = soloActivas
+                ? categoriaRepository.findByEstadoTrue(solicitud) : categoriaRepository.findAll(solicitud);
         var respuesta = new PaginaResponseDTO<>(
                 resultado.getContent().stream().map(this::convertirResponse).toList(),
                 resultado.getNumber(), resultado.getSize(), resultado.getTotalElements(),

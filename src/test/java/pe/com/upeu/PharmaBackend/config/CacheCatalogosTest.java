@@ -91,6 +91,24 @@ class CacheCatalogosTest {
     }
 
     @Test
+    void bajaLogicaDesapareceDeActivasYSeparaLaCacheAdministrativa() {
+        Categoria registro = categoria();
+        when(categorias.findById(1L)).thenReturn(Optional.of(registro));
+        when(categorias.save(any(Categoria.class))).thenAnswer(i -> i.getArgument(0));
+        when(categorias.findByEstadoTrue(any(Pageable.class))).thenAnswer(i ->
+                new PageImpl<>(registro.getEstado() ? List.of(registro) : List.of(),
+                        i.getArgument(0), registro.getEstado() ? 1 : 0));
+        assertThat(servicioCategorias.listarPaginado(0, 10, "nombre", "asc", true).contenido()).hasSize(1);
+        servicioCategorias.listarPaginado(0, 10, "nombre", "asc", true);
+        servicioCategorias.listarPaginado(0, 10, "nombre", "asc", false);
+        verify(categorias, times(1)).findByEstadoTrue(any(Pageable.class));
+        verify(categorias, times(1)).findAll(any(Pageable.class));
+        servicioCategorias.delete(1L);
+        assertThat(servicioCategorias.listarPaginado(0, 10, "nombre", "asc", true).contenido()).isEmpty();
+        verify(categorias, times(2)).findByEstadoTrue(any(Pageable.class));
+    }
+
+    @Test
     void renombrarCategoriaInvalidaCategoriasYProductos() {
         servicioCategorias.listarPaginado(0, 10, "nombre", "asc");
         servicioProductos.listarPaginado(0, 10, "nombre", "asc");
