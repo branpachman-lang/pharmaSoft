@@ -34,6 +34,17 @@ build/
 
 # Informes y evidencias locales de las practicas
 /docs/
+!/docs/
+/docs/*
+!/docs/informe-s13.pdf
+!/docs/Pacho_LP2_S13_Autonoma.pdf
+!/docs/Pacho_LP2_S13_Autonoma_Editable.docx
+!/docs/informe-s13.md
+!/docs/evidencias-s13/
+!/docs/evidencias-s13-autonoma-manual/
+!/docs/s13/
+!/docs/Guia_S13_Autonoma_Paso_a_Paso.*
+!/docs/Checklist_capturas_S13_Autonoma.md
 
 # Colecciones exportadas de Postman
 /postman/*.json

@@ -1,0 +1,15 @@
+{
+  "palabras_password_bearer_secret": {
+    "historico": 0,
+    "ejecucion_corregida": 0
+  },
+  "JWT_completo": {
+    "historico": 0,
+    "ejecucion_corregida": 0
+  },
+  "DNI_explicito_completo": {
+    "historico": 0,
+    "ejecucion_corregida": 0
+  },
+  "alcance": "pharma-backend.log completo y líneas desde 2026-11-08 19:48:40; revisión estática de logs de ClienteServiceImpl y VentaServiceImpl"
+}

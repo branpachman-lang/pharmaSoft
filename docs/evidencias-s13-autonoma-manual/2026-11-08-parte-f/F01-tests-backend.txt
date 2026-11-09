@@ -1,0 +1,24 @@
+[INFO] Running pe.com.upeu.PharmaBackend.config.CacheCatalogosTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.448 s -- in pe.com.upeu.PharmaBackend.config.CacheCatalogosTest
+[INFO] Running pe.com.upeu.PharmaBackend.config.ErrorRequestIdTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s -- in pe.com.upeu.PharmaBackend.config.ErrorRequestIdTest
+[INFO] Running pe.com.upeu.PharmaBackend.config.RequestIdFilterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in pe.com.upeu.PharmaBackend.config.RequestIdFilterTest
+[INFO] Running pe.com.upeu.PharmaBackend.controller.VentaControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.390 s -- in pe.com.upeu.PharmaBackend.controller.VentaControllerTest
+[INFO] Running pe.com.upeu.PharmaBackend.PharmaBackendApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.407 s -- in pe.com.upeu.PharmaBackend.PharmaBackendApplicationTests
+[INFO] Running pe.com.upeu.PharmaBackend.security.JwtServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s -- in pe.com.upeu.PharmaBackend.security.JwtServiceTest
+[INFO] Running pe.com.upeu.PharmaBackend.security.PermisosPorRolTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in pe.com.upeu.PharmaBackend.security.PermisosPorRolTest
+[INFO] Running pe.com.upeu.PharmaBackend.service.impl.CategoriaDependenciasTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in pe.com.upeu.PharmaBackend.service.impl.CategoriaDependenciasTest
+[INFO] Running pe.com.upeu.PharmaBackend.service.impl.ProductoServiceImplTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in pe.com.upeu.PharmaBackend.service.impl.ProductoServiceImplTest
+[INFO] Running pe.com.upeu.PharmaBackend.service.impl.SeguridadAutonomaServiceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.445 s -- in pe.com.upeu.PharmaBackend.service.impl.SeguridadAutonomaServiceTest
+[INFO] Running pe.com.upeu.PharmaBackend.service.impl.VentaServiceImplTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in pe.com.upeu.PharmaBackend.service.impl.VentaServiceImplTest
+[INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS

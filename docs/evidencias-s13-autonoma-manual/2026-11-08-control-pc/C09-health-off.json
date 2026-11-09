@@ -1,0 +1,121 @@
+{
+  "fecha": "2026-11-09T03:43:22.844Z",
+  "publico": {
+    "url": "/actuator/health",
+    "status": 503,
+    "ms": 612.739,
+    "requestId": "54aa8553",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "close",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:43:23 GMT",
+      "expires": "0",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "54aa8553",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "DOWN"
+    }
+  },
+  "admin": {
+    "url": "/actuator/health",
+    "status": 503,
+    "ms": 590.288,
+    "requestId": "4540f65c",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "close",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:43:24 GMT",
+      "expires": "0",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "4540f65c",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "components": {
+        "db": {
+          "details": {
+            "database": "Oracle",
+            "validationQuery": "isValid()"
+          },
+          "status": "UP"
+        },
+        "diskSpace": {
+          "details": {
+            "total": 648945856512,
+            "free": 71730692096,
+            "threshold": 10485760,
+            "path": "C:\\Users\\USUARIO\\Desktop\\UPEU 2026-2\\Lenguaje de programacion II\\Proyecto Software\\PharmaSoft\\PharmaBackend\\.",
+            "exists": true
+          },
+          "status": "UP"
+        },
+        "livenessState": {
+          "status": "UP"
+        },
+        "ping": {
+          "status": "UP"
+        },
+        "readinessState": {
+          "status": "UP"
+        },
+        "redis": {
+          "details": {
+            "error": "org.springframework.dao.QueryTimeoutException: Redis command timed out"
+          },
+          "status": "DOWN"
+        },
+        "ssl": {
+          "details": {
+            "expiringChains": [],
+            "invalidChains": [],
+            "validChains": []
+          },
+          "status": "UP"
+        }
+      },
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "DOWN"
+    }
+  },
+  "productos": {
+    "url": "/api/v1/productos?pagina=0",
+    "status": 200,
+    "ms": 539.086,
+    "requestId": "add34260",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:43:22 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "add34260",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "filas": 10
+    }
+  }
+}

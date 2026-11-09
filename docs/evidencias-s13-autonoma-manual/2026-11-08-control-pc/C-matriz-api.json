@@ -1,0 +1,116 @@
+{
+  "fecha": "2026-11-09T03:31:16.079Z",
+  "producto": {
+    "url": "/api/v1/productos/99",
+    "status": 200,
+    "ms": 25.98,
+    "requestId": "98ce580c",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:15 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "98ce580c",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "id": 99,
+      "nombre": "ZZ S13 PC 0811 2225 producto",
+      "descripcion": "Producto exclusivo del ensayo autónomo con control del computador",
+      "precio": 3.75,
+      "stock": 9,
+      "estado": true,
+      "categoriaId": 147,
+      "categoriaNombre": "ZZ S13 PC 0811 2225 nueva",
+      "fechaCreacion": "2026-11-08T22:25:33.2445294",
+      "fechaModificacion": "2026-11-08T22:26:18.6049483"
+    }
+  },
+  "productoLista": {
+    "id": 99,
+    "nombre": "ZZ S13 PC 0811 2225 producto",
+    "descripcion": "Producto exclusivo del ensayo autónomo con control del computador",
+    "precio": 3.75,
+    "stock": 9,
+    "estado": true,
+    "categoriaId": 147,
+    "categoriaNombre": "ZZ S13 PC 0811 2225 nueva",
+    "fechaCreacion": "2026-11-08T22:25:33.2445294",
+    "fechaModificacion": "2026-11-08T22:26:18.6049483"
+  },
+  "bajaAusenteDeActivas": true,
+  "bajaHistorico": {
+    "url": "/api/v1/categorias/148",
+    "status": 200,
+    "ms": 17.584,
+    "requestId": "81740c7f",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "81740c7f",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "id": 148,
+      "nombre": "ZZ S13 PC 0811 2225 vacia",
+      "descripcion": "Categoría vacía exclusiva para comprobar la baja lógica",
+      "estado": false,
+      "fechaCreacion": "2026-11-08T22:28:05.8350581",
+      "fechaModificacion": "2026-11-08T22:28:16.0995847"
+    }
+  },
+  "venta": {
+    "url": "/api/v1/ventas/141",
+    "status": 200,
+    "ms": 19.572,
+    "requestId": "f758a759",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "f758a759",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "id": 141,
+      "fecha": "2026-11-08T22:27:14.6597496",
+      "clienteId": 46,
+      "clienteNombre": "Ensayo Autonoma S13",
+      "estado": "REGISTRADA",
+      "total": 3.75,
+      "detalles": [
+        {
+          "productoId": 99,
+          "productoNombre": "ZZ S13 PC 0811 2225 producto",
+          "cantidad": 1,
+          "precio": 3.75,
+          "subtotal": 3.75
+        }
+      ]
+    }
+  }
+}

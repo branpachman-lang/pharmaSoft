@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-11-09T03:45:35.483Z",
+  "clave": "categorias::pagina-0-7-nombre-asc-activas-false",
+  "ttlAntes": -2,
+  "ttl": 600,
+  "comando": "redis-cli TTL categorias::pagina-0-7-nombre-asc-activas-false"
+}

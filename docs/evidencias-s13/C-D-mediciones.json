@@ -1,0 +1,619 @@
+{
+  "measuredAt": "2026-11-09T00:50:45.982Z",
+  "cache": {
+    "categorias": {
+      "before": {
+        "status": 200,
+        "ms": 83.913,
+        "requestId": "508be807",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "result",
+              "values": [
+                "hit",
+                "pending",
+                "miss"
+              ]
+            },
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "cache",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of pending requests",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 0
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "after": {
+        "status": 200,
+        "ms": 27.606,
+        "requestId": "2fda71ff",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "result",
+              "values": [
+                "hit",
+                "pending",
+                "miss"
+              ]
+            },
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "cache",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of pending requests",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 20
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "hit": {
+        "status": 200,
+        "ms": 30.352,
+        "requestId": "9d5c6a97",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 19
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "miss": {
+        "status": 200,
+        "ms": 28.643,
+        "requestId": "a42f1e3e",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 1
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "requests": [
+        {
+          "n": 1,
+          "ms": 499.175,
+          "requestId": "5fab7503"
+        },
+        {
+          "n": 2,
+          "ms": 35.537,
+          "requestId": "6d4657b3"
+        },
+        {
+          "n": 3,
+          "ms": 19.073,
+          "requestId": "abe92882"
+        },
+        {
+          "n": 4,
+          "ms": 21.015,
+          "requestId": "0322c9f4"
+        },
+        {
+          "n": 5,
+          "ms": 29.027,
+          "requestId": "33c00e08"
+        },
+        {
+          "n": 6,
+          "ms": 31.028,
+          "requestId": "040898ce"
+        },
+        {
+          "n": 7,
+          "ms": 31.323,
+          "requestId": "8e06dca8"
+        },
+        {
+          "n": 8,
+          "ms": 32.055,
+          "requestId": "aac63187"
+        },
+        {
+          "n": 9,
+          "ms": 31.319,
+          "requestId": "a6c26237"
+        },
+        {
+          "n": 10,
+          "ms": 29.1,
+          "requestId": "fdb6ea13"
+        },
+        {
+          "n": 11,
+          "ms": 29.366,
+          "requestId": "7ce7b126"
+        },
+        {
+          "n": 12,
+          "ms": 32.816,
+          "requestId": "f096fe11"
+        },
+        {
+          "n": 13,
+          "ms": 35.421,
+          "requestId": "66b3ae79"
+        },
+        {
+          "n": 14,
+          "ms": 29.591,
+          "requestId": "4b6ba194"
+        },
+        {
+          "n": 15,
+          "ms": 27.616,
+          "requestId": "43b76981"
+        },
+        {
+          "n": 16,
+          "ms": 30.977,
+          "requestId": "95acdc74"
+        },
+        {
+          "n": 17,
+          "ms": 15.858,
+          "requestId": "67e6bea8"
+        },
+        {
+          "n": 18,
+          "ms": 28.809,
+          "requestId": "9cc1402b"
+        },
+        {
+          "n": 19,
+          "ms": 34.539,
+          "requestId": "3611815a"
+        },
+        {
+          "n": 20,
+          "ms": 30.589,
+          "requestId": "9d1544b4"
+        }
+      ],
+      "firstMs": 499.175,
+      "meanHitMs": 29.213631578947368
+    },
+    "productos": {
+      "before": {
+        "status": 200,
+        "ms": 14.002,
+        "requestId": "8fe24980",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "result",
+              "values": [
+                "hit",
+                "pending",
+                "miss"
+              ]
+            },
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "cache",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of pending requests",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 20
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "after": {
+        "status": 200,
+        "ms": 28.086,
+        "requestId": "7c077866",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "result",
+              "values": [
+                "hit",
+                "pending",
+                "miss"
+              ]
+            },
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "cache",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos",
+                "categorias"
+              ]
+            }
+          ],
+          "description": "The number of pending requests",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 40
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "hit": {
+        "status": 200,
+        "ms": 14.652,
+        "requestId": "c3f1fe58",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos"
+              ]
+            }
+          ],
+          "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 19
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "miss": {
+        "status": 200,
+        "ms": 14.413,
+        "requestId": "1f8d9c67",
+        "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+        "data": {
+          "availableTags": [
+            {
+              "tag": "cache.manager",
+              "values": [
+                "cacheManager"
+              ]
+            },
+            {
+              "tag": "name",
+              "values": [
+                "productos"
+              ]
+            }
+          ],
+          "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+          "measurements": [
+            {
+              "statistic": "COUNT",
+              "value": 1
+            }
+          ],
+          "name": "cache.gets"
+        }
+      },
+      "requests": [
+        {
+          "n": 1,
+          "ms": 83.694,
+          "requestId": "2a8b33dc"
+        },
+        {
+          "n": 2,
+          "ms": 28.886,
+          "requestId": "0420f015"
+        },
+        {
+          "n": 3,
+          "ms": 31.012,
+          "requestId": "967c840d"
+        },
+        {
+          "n": 4,
+          "ms": 32.086,
+          "requestId": "c351efb7"
+        },
+        {
+          "n": 5,
+          "ms": 31.075,
+          "requestId": "3a009d39"
+        },
+        {
+          "n": 6,
+          "ms": 29.336,
+          "requestId": "12c97ac4"
+        },
+        {
+          "n": 7,
+          "ms": 34.201,
+          "requestId": "74e6a2c2"
+        },
+        {
+          "n": 8,
+          "ms": 29.689,
+          "requestId": "92f181b2"
+        },
+        {
+          "n": 9,
+          "ms": 28.814,
+          "requestId": "876bad22"
+        },
+        {
+          "n": 10,
+          "ms": 31.419,
+          "requestId": "85f9bbf8"
+        },
+        {
+          "n": 11,
+          "ms": 29.91,
+          "requestId": "6e4934ce"
+        },
+        {
+          "n": 12,
+          "ms": 30.942,
+          "requestId": "17bf1281"
+        },
+        {
+          "n": 13,
+          "ms": 15.773,
+          "requestId": "79cff795"
+        },
+        {
+          "n": 14,
+          "ms": 32.33,
+          "requestId": "ace155e4"
+        },
+        {
+          "n": 15,
+          "ms": 28.641,
+          "requestId": "68565e0b"
+        },
+        {
+          "n": 16,
+          "ms": 29.519,
+          "requestId": "fffe2fd4"
+        },
+        {
+          "n": 17,
+          "ms": 30.464,
+          "requestId": "3f07f51d"
+        },
+        {
+          "n": 18,
+          "ms": 12.614,
+          "requestId": "cb265de6"
+        },
+        {
+          "n": 19,
+          "ms": 18.231,
+          "requestId": "6a4f694d"
+        },
+        {
+          "n": 20,
+          "ms": 30.323,
+          "requestId": "f7beb895"
+        }
+      ],
+      "firstMs": 83.694,
+      "meanHitMs": 28.171842105263156
+    }
+  },
+  "healthAnonymous": {
+    "status": 200,
+    "ms": 42.484,
+    "requestId": "dde33440",
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "data": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  "healthAdmin": {
+    "status": 200,
+    "ms": 29.615,
+    "requestId": "166e9551",
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "data": {
+      "components": {
+        "db": {
+          "details": {
+            "database": "Oracle",
+            "validationQuery": "isValid()"
+          },
+          "status": "UP"
+        },
+        "diskSpace": {
+          "details": {
+            "total": 648945856512,
+            "free": 69402529792,
+            "threshold": 10485760,
+            "path": "C:\\Users\\USUARIO\\Desktop\\UPEU 2026-2\\Lenguaje de programacion II\\Proyecto Software\\PharmaSoft\\PharmaBackend\\.",
+            "exists": true
+          },
+          "status": "UP"
+        },
+        "livenessState": {
+          "status": "UP"
+        },
+        "ping": {
+          "status": "UP"
+        },
+        "readinessState": {
+          "status": "UP"
+        },
+        "redis": {
+          "details": {
+            "version": "7.4.12"
+          },
+          "status": "UP"
+        },
+        "ssl": {
+          "details": {
+            "expiringChains": [],
+            "invalidChains": [],
+            "validChains": []
+          },
+          "status": "UP"
+        }
+      },
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  "error": {
+    "status": 404,
+    "ms": 42.675,
+    "requestId": "f7526a93",
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "data": {
+      "timestamp": "2026-11-08T19:50:48.010034",
+      "status": 404,
+      "error": "Not Found",
+      "message": "Producto no encontrado con el ID: 999999999",
+      "path": "/api/v1/productos/999999999",
+      "validationErrors": null,
+      "requestId": "f7526a93"
+    }
+  },
+  "errorUnauthorized": {
+    "status": 401,
+    "ms": 22.271,
+    "requestId": "f8dcc37a",
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "data": {
+      "timestamp": "2026-11-08T19:50:48.032213400",
+      "status": 401,
+      "error": "Unauthorized",
+      "message": "Debe iniciar sesión para acceder a este recurso",
+      "path": "/api/v1/productos",
+      "validationErrors": null,
+      "requestId": "f8dcc37a"
+    }
+  }
+}

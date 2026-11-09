@@ -1,0 +1,33 @@
+> Building...
+√ Building...
+Initial chunk files | Names             |  Raw size | Estimated transfer size
+chunk-Ca9u6zOW.js   | -                 | 205.49 kB |                59.97 kB
+chunk-CfM0jVPB.js   | -                 |  91.97 kB |                23.35 kB
+main-HWAKLLAQ.js    | main              |   6.61 kB |                 2.36 kB
+styles-AAJM6OEI.css | styles            |   1.66 kB |               589 bytes
+chunk-kiu1T7UI.js   | -                 |  54 bytes |                54 bytes
+
+                    | Initial total     | 305.78 kB |                86.32 kB
+
+Lazy chunk files    | Names             |  Raw size | Estimated transfer size
+chunk-xDjqa9t5.js   | -                 |  50.37 kB |                10.25 kB
+chunk-9xzBjDDH.js   | ventas-routes     |  46.17 kB |                10.84 kB
+chunk-BOYjAMXb.js   | productos-routes  |  21.25 kB |                 5.75 kB
+chunk-tsqZRAry.js   | clientes-routes   |  16.99 kB |                 4.68 kB
+chunk-D83o77EK.js   | categorias-routes |  13.71 kB |                 4.14 kB
+chunk-aqPn0OAc.js   | ventas-categoria  |   9.79 kB |                 3.17 kB
+chunk-CQXNVnCc.js   | main-layout       |   8.13 kB |                 2.62 kB
+chunk-DkQrho61.js   | mi-cuenta         |   6.51 kB |                 2.22 kB
+chunk-COdM1jwW.js   | login             |   5.45 kB |                 2.06 kB
+chunk-Bf1slR6q.js   | mas-vendidos      |   3.12 kB |                 1.30 kB
+chunk-dsKQkGlC.js   | inicio            |   2.64 kB |                 1.12 kB
+chunk-DnP3vWC1.js   | -                 |   1.46 kB |               736 bytes
+chunk-8U6AVDqx.js   | -                 |   1.33 kB |               702 bytes
+chunk-BcNoeA2K.js   | acceso-denegado   |   1.16 kB |               574 bytes
+chunk-CqlMrpRq.js   | -                 | 841 bytes |               841 bytes
+...and 6 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [2.491 seconds] - 2026-11-09T00:56:55.382Z
+
+Output location: C:\Users\USUARIO\Desktop\UPEU 2026-2\Lenguaje de programacion II\Proyecto Software\PharmaSoft\pharma-frontend\dist\pharma-frontend
+

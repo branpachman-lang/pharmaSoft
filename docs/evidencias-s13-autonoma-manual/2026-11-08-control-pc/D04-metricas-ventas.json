@@ -1,0 +1,142 @@
+{
+  "uri": {
+    "url": "/actuator/metrics/http.server.requests?tag=uri:/api/v1/ventas",
+    "status": 200,
+    "ms": 14.355,
+    "requestId": "fbfb1d08",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-disposition": "inline;filename=f.txt",
+      "content-length": "407",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "fbfb1d08",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "availableTags": [
+        {
+          "tag": "exception",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "method",
+          "values": [
+            "POST"
+          ]
+        },
+        {
+          "tag": "error",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "outcome",
+          "values": [
+            "CLIENT_ERROR",
+            "SUCCESS"
+          ]
+        },
+        {
+          "tag": "status",
+          "values": [
+            "409",
+            "201"
+          ]
+        }
+      ],
+      "baseUnit": "seconds",
+      "measurements": [
+        {
+          "statistic": "COUNT",
+          "value": 2
+        },
+        {
+          "statistic": "TOTAL_TIME",
+          "value": 0.369123401
+        },
+        {
+          "statistic": "MAX",
+          "value": 0.0200167
+        }
+      ],
+      "name": "http.server.requests"
+    }
+  },
+  "post": {
+    "url": "/actuator/metrics/http.server.requests?tag=uri:/api/v1/ventas&tag=method:POST",
+    "status": 200,
+    "ms": 20.777,
+    "requestId": "01091703",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-disposition": "inline;filename=f.txt",
+      "content-length": "372",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "01091703",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "availableTags": [
+        {
+          "tag": "exception",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "error",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "outcome",
+          "values": [
+            "CLIENT_ERROR",
+            "SUCCESS"
+          ]
+        },
+        {
+          "tag": "status",
+          "values": [
+            "409",
+            "201"
+          ]
+        }
+      ],
+      "baseUnit": "seconds",
+      "measurements": [
+        {
+          "statistic": "COUNT",
+          "value": 2
+        },
+        {
+          "statistic": "TOTAL_TIME",
+          "value": 0.369123401
+        },
+        {
+          "statistic": "MAX",
+          "value": 0.0200167
+        }
+      ],
+      "name": "http.server.requests"
+    }
+  }
+}

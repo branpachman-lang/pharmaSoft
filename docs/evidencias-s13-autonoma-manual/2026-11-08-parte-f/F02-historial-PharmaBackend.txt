@@ -1,0 +1,10 @@
+PharmaBackend · 2026-11-08T23:12:00-05:00
+Rama feature/optimizacion-produccion-pacho
+
+git log develop..HEAD --format="%h %as %s"
+cf2dc09	2026-11-08	docs(s13): completar informe y evidencias de la actividad autonoma
+1a6bc1f	2026-11-08	feat(s13): completar trazabilidad, cache e informe de produccion
+1a79813	2026-11-06	optimizacion
+
+git ls-remote --heads origin develop feature/optimizacion-produccion-pacho
+1a79813aabff8df83c7e65a7f4970ae35c916fbf	refs/heads/feature/optimizacion-produccion-pacho

@@ -1,0 +1,10 @@
+pharma-frontend · 2026-11-08T23:12:00-05:00
+Rama feature/optimizacion-produccion-pacho
+
+git log develop..HEAD --format="%h %as %s"
+66b0064	2026-11-08	fix(test): configurar Router en pruebas de inicio y categorias
+f0a0bd7	2026-11-08	docs(s13): incorporar guia y despliegue local de la SPA
+eec4618	2026-11-08	perf(s13): diferir layout y completar seguimiento y categorias activas
+
+git ls-remote --heads origin develop feature/optimizacion-produccion-pacho
+c72b6e105ffc6f11edc452bf8dc6a57b7b944370	refs/heads/develop

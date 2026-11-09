@@ -1,0 +1,634 @@
+{
+  "fecha": "2026-11-09T03:31:13.768Z",
+  "metodo": "20 GET secuenciales, cliente Node, tiempo total HTTP, deltas por caché",
+  "caches": {
+    "categorias": {
+      "key": "categorias::pagina-0-10-nombre-asc-activas-false",
+      "before": {
+        "hit": {
+          "url": "/actuator/metrics/cache.gets?tag=name:categorias&tag=result:hit",
+          "status": 200,
+          "ms": 38.483,
+          "requestId": "e187d9e0",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "316",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:14 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "e187d9e0",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "categorias"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 10
+              }
+            ],
+            "name": "cache.gets"
+          }
+        },
+        "miss": {
+          "url": "/actuator/metrics/cache.gets?tag=name:categorias&tag=result:miss",
+          "status": 200,
+          "ms": 23.416,
+          "requestId": "928ff38a",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "316",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:14 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "928ff38a",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "categorias"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 12
+              }
+            ],
+            "name": "cache.gets"
+          }
+        }
+      },
+      "after": {
+        "hit": {
+          "url": "/actuator/metrics/cache.gets?tag=name:categorias&tag=result:hit",
+          "status": 200,
+          "ms": 20.056,
+          "requestId": "976c51e7",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "316",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:14 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "976c51e7",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "categorias"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 29
+              }
+            ],
+            "name": "cache.gets"
+          }
+        },
+        "miss": {
+          "url": "/actuator/metrics/cache.gets?tag=name:categorias&tag=result:miss",
+          "status": 200,
+          "ms": 10.664,
+          "requestId": "ccf4fe2c",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "316",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:14 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "ccf4fe2c",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "categorias"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 13
+              }
+            ],
+            "name": "cache.gets"
+          }
+        }
+      },
+      "trials": [
+        {
+          "n": 1,
+          "status": 200,
+          "ms": 23.733,
+          "requestId": "d41a2a77"
+        },
+        {
+          "n": 2,
+          "status": 200,
+          "ms": 14.918,
+          "requestId": "575d391a"
+        },
+        {
+          "n": 3,
+          "status": 200,
+          "ms": 22.19,
+          "requestId": "7e716778"
+        },
+        {
+          "n": 4,
+          "status": 200,
+          "ms": 15.394,
+          "requestId": "dce4bb66"
+        },
+        {
+          "n": 5,
+          "status": 200,
+          "ms": 15.966,
+          "requestId": "f6c3298e"
+        },
+        {
+          "n": 6,
+          "status": 200,
+          "ms": 14.349,
+          "requestId": "9f170206"
+        },
+        {
+          "n": 7,
+          "status": 200,
+          "ms": 14.896,
+          "requestId": "1b3247c3"
+        },
+        {
+          "n": 8,
+          "status": 200,
+          "ms": 15.843,
+          "requestId": "64970576"
+        },
+        {
+          "n": 9,
+          "status": 200,
+          "ms": 15.223,
+          "requestId": "63d620c6"
+        },
+        {
+          "n": 10,
+          "status": 200,
+          "ms": 16.08,
+          "requestId": "273a1e93"
+        },
+        {
+          "n": 11,
+          "status": 200,
+          "ms": 30.474,
+          "requestId": "089e6870"
+        },
+        {
+          "n": 12,
+          "status": 200,
+          "ms": 15.616,
+          "requestId": "6e75eaf9"
+        },
+        {
+          "n": 13,
+          "status": 200,
+          "ms": 30.469,
+          "requestId": "0a29c91f"
+        },
+        {
+          "n": 14,
+          "status": 200,
+          "ms": 31.079,
+          "requestId": "904ab804"
+        },
+        {
+          "n": 15,
+          "status": 200,
+          "ms": 18.49,
+          "requestId": "41949375"
+        },
+        {
+          "n": 16,
+          "status": 200,
+          "ms": 24.449,
+          "requestId": "4a932b72"
+        },
+        {
+          "n": 17,
+          "status": 200,
+          "ms": 32.536,
+          "requestId": "840a4f1b"
+        },
+        {
+          "n": 18,
+          "status": 200,
+          "ms": 20.941,
+          "requestId": "27334dc3"
+        },
+        {
+          "n": 19,
+          "status": 200,
+          "ms": 29.015,
+          "requestId": "12e880e5"
+        },
+        {
+          "n": 20,
+          "status": 200,
+          "ms": 13.486,
+          "requestId": "9ba82572"
+        }
+      ],
+      "hits": 19,
+      "misses": 1,
+      "rate": 95,
+      "firstMs": 23.733,
+      "meanHitMs": 20.600736842105263
+    },
+    "productos": {
+      "key": "productos::pagina-0-10-nombre-asc",
+      "before": {
+        "hit": {
+          "url": "/actuator/metrics/cache.gets?tag=name:productos&tag=result:hit",
+          "status": 200,
+          "ms": 25.145,
+          "requestId": "dcd10a3a",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "314",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:15 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "dcd10a3a",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "productos"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 1
+              }
+            ],
+            "name": "cache.gets"
+          }
+        },
+        "miss": {
+          "url": "/actuator/metrics/cache.gets?tag=name:productos&tag=result:miss",
+          "status": 200,
+          "ms": 20.676,
+          "requestId": "6685b4fc",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "315",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:15 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "6685b4fc",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "productos"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 11
+              }
+            ],
+            "name": "cache.gets"
+          }
+        }
+      },
+      "after": {
+        "hit": {
+          "url": "/actuator/metrics/cache.gets?tag=name:productos&tag=result:hit",
+          "status": 200,
+          "ms": 11.32,
+          "requestId": "951bf887",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "315",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:15 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "951bf887",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "productos"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 20
+              }
+            ],
+            "name": "cache.gets"
+          }
+        },
+        "miss": {
+          "url": "/actuator/metrics/cache.gets?tag=name:productos&tag=result:miss",
+          "status": 200,
+          "ms": 16.02,
+          "requestId": "196d751f",
+          "headers": {
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "connection": "keep-alive",
+            "content-disposition": "inline;filename=f.txt",
+            "content-length": "315",
+            "content-type": "application/vnd.spring-boot.actuator.v3+json",
+            "date": "Mon, 09 Nov 2026 03:31:15 GMT",
+            "expires": "0",
+            "keep-alive": "timeout=60",
+            "pragma": "no-cache",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "DENY",
+            "x-request-id": "196d751f",
+            "x-xss-protection": "0"
+          },
+          "data": {
+            "availableTags": [
+              {
+                "tag": "cache.manager",
+                "values": [
+                  "cacheManager"
+                ]
+              },
+              {
+                "tag": "cache",
+                "values": [
+                  "productos"
+                ]
+              }
+            ],
+            "description": "The number of times cache lookup methods have returned a cached (hit) or uncached (newly loaded or null) value (miss).",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 12
+              }
+            ],
+            "name": "cache.gets"
+          }
+        }
+      },
+      "trials": [
+        {
+          "n": 1,
+          "status": 200,
+          "ms": 28.947,
+          "requestId": "e8b6e64d"
+        },
+        {
+          "n": 2,
+          "status": 200,
+          "ms": 16.625,
+          "requestId": "3de76ad8"
+        },
+        {
+          "n": 3,
+          "status": 200,
+          "ms": 14.234,
+          "requestId": "500b7df0"
+        },
+        {
+          "n": 4,
+          "status": 200,
+          "ms": 18.04,
+          "requestId": "df061467"
+        },
+        {
+          "n": 5,
+          "status": 200,
+          "ms": 36.785,
+          "requestId": "0c0ee6fc"
+        },
+        {
+          "n": 6,
+          "status": 200,
+          "ms": 27.281,
+          "requestId": "fd98c1f0"
+        },
+        {
+          "n": 7,
+          "status": 200,
+          "ms": 32.764,
+          "requestId": "efccabb9"
+        },
+        {
+          "n": 8,
+          "status": 200,
+          "ms": 27.019,
+          "requestId": "7f29fcc0"
+        },
+        {
+          "n": 9,
+          "status": 200,
+          "ms": 14.956,
+          "requestId": "21427005"
+        },
+        {
+          "n": 10,
+          "status": 200,
+          "ms": 17.838,
+          "requestId": "d5bf13f3"
+        },
+        {
+          "n": 11,
+          "status": 200,
+          "ms": 28.563,
+          "requestId": "bb796250"
+        },
+        {
+          "n": 12,
+          "status": 200,
+          "ms": 27.955,
+          "requestId": "376c68b0"
+        },
+        {
+          "n": 13,
+          "status": 200,
+          "ms": 19.264,
+          "requestId": "c8a3a755"
+        },
+        {
+          "n": 14,
+          "status": 200,
+          "ms": 34.495,
+          "requestId": "78f00925"
+        },
+        {
+          "n": 15,
+          "status": 200,
+          "ms": 30.482,
+          "requestId": "28ba4986"
+        },
+        {
+          "n": 16,
+          "status": 200,
+          "ms": 37.235,
+          "requestId": "a1a18c96"
+        },
+        {
+          "n": 17,
+          "status": 200,
+          "ms": 16.856,
+          "requestId": "3e74224c"
+        },
+        {
+          "n": 18,
+          "status": 200,
+          "ms": 28.136,
+          "requestId": "3ade477a"
+        },
+        {
+          "n": 19,
+          "status": 200,
+          "ms": 14.218,
+          "requestId": "239cd000"
+        },
+        {
+          "n": 20,
+          "status": 200,
+          "ms": 17.812,
+          "requestId": "baa16da6"
+        }
+      ],
+      "hits": 19,
+      "misses": 1,
+      "rate": 95,
+      "firstMs": 28.947,
+      "meanHitMs": 24.23989473684211
+    }
+  }
+}

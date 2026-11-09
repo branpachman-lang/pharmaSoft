@@ -1,0 +1,22 @@
+{
+  "fecha": "2026-11-09T03:53:52.0794955Z",
+  "archivos": [
+    {
+      "coincidencias": 0,
+      "archivo": "logs/pharma-backend.log",
+      "lineas": 893
+    },
+    {
+      "coincidencias": 0,
+      "archivo": "logs/arranque-20261108-225339.out.log",
+      "lineas": 17
+    },
+    {
+      "coincidencias": 0,
+      "archivo": "logs/arranque-20261108-225339.err.log",
+      "lineas": 0
+    }
+  ],
+  "health": "UP",
+  "alcance": "Búsqueda literal de la clave generada para este arranque. Solo se guardan conteos."
+}

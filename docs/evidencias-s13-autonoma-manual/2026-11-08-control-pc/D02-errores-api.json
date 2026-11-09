@@ -1,0 +1,124 @@
+{
+  "noEncontrado": {
+    "url": "/api/v1/productos/999999999",
+    "status": 404,
+    "ms": 39.565,
+    "requestId": "577be00e",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "577be00e",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "timestamp": "2026-11-08T22:31:16.1155131",
+      "status": 404,
+      "error": "Not Found",
+      "message": "Producto no encontrado con el ID: 999999999",
+      "path": "/api/v1/productos/999999999",
+      "validationErrors": null,
+      "requestId": "577be00e"
+    }
+  },
+  "sinToken": {
+    "url": "/api/v1/productos",
+    "status": 401,
+    "ms": 14.169,
+    "requestId": "51f92dbd",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-length": "216",
+      "content-type": "application/json;charset=UTF-8",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "www-authenticate": "Bearer",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "51f92dbd",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "timestamp": "2026-11-08T22:31:16.127615200",
+      "status": 401,
+      "error": "Unauthorized",
+      "message": "Debe iniciar sesión para acceder a este recurso",
+      "path": "/api/v1/productos",
+      "validationErrors": null,
+      "requestId": "51f92dbd"
+    }
+  },
+  "validacion": {
+    "url": "/api/v1/categorias",
+    "status": 400,
+    "ms": 28.594,
+    "requestId": "d77432d5",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "close",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "d77432d5",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "timestamp": "2026-11-08T22:31:16.1530472",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "Existen errores de validación",
+      "path": "/api/v1/categorias",
+      "validationErrors": {
+        "nombre": "El nombre debe tener entre 3 y 50 caracteres"
+      },
+      "requestId": "d77432d5"
+    }
+  },
+  "stockInsuficiente": {
+    "url": "/api/v1/ventas",
+    "status": 409,
+    "ms": 27.201,
+    "requestId": "b1376900",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:31:16 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "b1376900",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "timestamp": "2026-11-08T22:31:16.1883972",
+      "status": 409,
+      "error": "Conflict",
+      "message": "Stock insuficiente para ZZ S13 PC 0811 2225 producto. Vuelve a revisar las unidades disponibles.",
+      "path": "/api/v1/ventas",
+      "validationErrors": null,
+      "requestId": "b1376900"
+    }
+  }
+}

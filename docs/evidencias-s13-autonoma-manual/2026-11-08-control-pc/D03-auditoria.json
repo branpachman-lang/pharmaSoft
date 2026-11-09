@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-11-09T03:31:16.228Z",
+  "archivo": "logs/pharma-backend.log",
+  "lineasRonda": 158,
+  "conteos": {
+    "palabras": 0,
+    "jwt": 0,
+    "dni": 0
+  },
+  "contrasenaDeEnsayo": 0,
+  "alcance": "Ronda desde 22:20:56; conteos, sin líneas que contengan datos sensibles"
+}

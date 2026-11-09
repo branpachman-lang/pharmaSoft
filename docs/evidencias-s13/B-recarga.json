@@ -1,0 +1,133 @@
+[
+  {
+    "resource": "/ventas",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "no-cache",
+    "memory": false
+  },
+  {
+    "resource": "/chunk-Ca9u6zOW.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-CfM0jVPB.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-kiu1T7UI.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/main-D676CMNU.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/styles-AAJM6OEI.css",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-CosgKqug.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-CqlMrpRq.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-rSef3PVZ.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-FRaNfq94.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-xDjqa9t5.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-Bb9dQRHq.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-B3sUECNA.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-DnP3vWC1.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/chunk-Bhdf8b4r.js",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "memory": true
+  },
+  {
+    "resource": "/shopping-store.png",
+    "status": 200,
+    "disk": true,
+    "memory": false
+  },
+  {
+    "resource": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+    "status": 200,
+    "disk": false,
+    "memory": true
+  },
+  {
+    "resource": "/api/v1/clientes",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "memory": false
+  },
+  {
+    "resource": "/api/v1/ventas/buscar",
+    "status": 200,
+    "disk": false,
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+    "memory": false
+  }
+]

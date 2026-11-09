@@ -1,0 +1,866 @@
+{
+  "label": "con-precarga",
+  "trials": [
+    {
+      "firstBytes": 207676,
+      "ventasAfterClickMs": 198.27,
+      "loginToVentasMs": 5553.63,
+      "responses": [
+        {
+          "url": "/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-kiu1T7UI.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/styles-AAJM6OEI.css",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/main-FMHVQWUH.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-D2cyTKEA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Ca9u6zOW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BCUgVRf3.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-rSef3PVZ.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-xDjqa9t5.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CRVsCuaW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BXn5399e.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CVucbAkr.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DweAJDni.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DCj-6s2H.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-C7uRGMrA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Dqh-KCJg.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-k853IlzF.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DZVhyidc.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B2_aI7Sy.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CqlMrpRq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-8U6AVDqx.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/auth/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DjCSSc6t.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Bb9dQRHq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DnP3vWC1.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B3sUECNA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CwPIGZto.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/clientes",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/ventas/buscar",
+          "status": 200,
+          "disk": false
+        }
+      ]
+    },
+    {
+      "firstBytes": 207675,
+      "ventasAfterClickMs": 179.77,
+      "loginToVentasMs": 5565.15,
+      "responses": [
+        {
+          "url": "/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-kiu1T7UI.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/styles-AAJM6OEI.css",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/main-FMHVQWUH.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-D2cyTKEA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Ca9u6zOW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BCUgVRf3.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-rSef3PVZ.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-xDjqa9t5.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CRVsCuaW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CVucbAkr.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BXn5399e.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DweAJDni.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DCj-6s2H.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-C7uRGMrA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Dqh-KCJg.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-k853IlzF.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DZVhyidc.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CqlMrpRq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B2_aI7Sy.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/auth/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-8U6AVDqx.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DjCSSc6t.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Bb9dQRHq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DnP3vWC1.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B3sUECNA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CwPIGZto.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/clientes",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/ventas/buscar",
+          "status": 200,
+          "disk": false
+        }
+      ]
+    },
+    {
+      "firstBytes": 207679,
+      "ventasAfterClickMs": 177.95,
+      "loginToVentasMs": 5545.9,
+      "responses": [
+        {
+          "url": "/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-kiu1T7UI.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/styles-AAJM6OEI.css",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/main-FMHVQWUH.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-D2cyTKEA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Ca9u6zOW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BCUgVRf3.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-rSef3PVZ.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-xDjqa9t5.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CRVsCuaW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CVucbAkr.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BXn5399e.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DweAJDni.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DCj-6s2H.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-C7uRGMrA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Dqh-KCJg.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-k853IlzF.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DZVhyidc.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B2_aI7Sy.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CqlMrpRq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-8U6AVDqx.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/auth/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DjCSSc6t.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Bb9dQRHq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DnP3vWC1.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B3sUECNA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CwPIGZto.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/clientes",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/ventas/buscar",
+          "status": 200,
+          "disk": false
+        }
+      ]
+    },
+    {
+      "firstBytes": 207677,
+      "ventasAfterClickMs": 282.76,
+      "loginToVentasMs": 5647.79,
+      "responses": [
+        {
+          "url": "/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-kiu1T7UI.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/styles-AAJM6OEI.css",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/main-FMHVQWUH.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-D2cyTKEA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Ca9u6zOW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BCUgVRf3.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-rSef3PVZ.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-xDjqa9t5.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CRVsCuaW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BXn5399e.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CVucbAkr.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DweAJDni.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DCj-6s2H.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-C7uRGMrA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Dqh-KCJg.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-k853IlzF.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DZVhyidc.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B2_aI7Sy.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CqlMrpRq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-8U6AVDqx.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/auth/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DjCSSc6t.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Bb9dQRHq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DnP3vWC1.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B3sUECNA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CwPIGZto.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/clientes",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/ventas/buscar",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        }
+      ]
+    },
+    {
+      "firstBytes": 207677,
+      "ventasAfterClickMs": 166.96,
+      "loginToVentasMs": 5539.18,
+      "responses": [
+        {
+          "url": "/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/styles-AAJM6OEI.css",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-kiu1T7UI.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/main-FMHVQWUH.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-D2cyTKEA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Ca9u6zOW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BCUgVRf3.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-rSef3PVZ.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-xDjqa9t5.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CRVsCuaW.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CVucbAkr.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-BXn5399e.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DweAJDni.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DCj-6s2H.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-C7uRGMrA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-k853IlzF.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Dqh-KCJg.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DZVhyidc.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B2_aI7Sy.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CqlMrpRq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-8U6AVDqx.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/auth/login",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DjCSSc6t.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-Bb9dQRHq.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-DnP3vWC1.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-B3sUECNA.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/chunk-CwPIGZto.js",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/clientes",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/api/v1/ventas/buscar",
+          "status": 200,
+          "disk": false
+        },
+        {
+          "url": "/shopping-store.png",
+          "status": 200,
+          "disk": false
+        }
+      ]
+    }
+  ],
+  "conditions": "Chrome; 1.5 Mbit/s; 80 ms; cache deshabilitada; espera fija 5 s tras login; 5 contextos nuevos"
+}

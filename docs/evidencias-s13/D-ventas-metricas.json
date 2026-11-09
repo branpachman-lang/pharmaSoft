@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "ms": 23.853,
+  "requestId": "726c33b8",
+  "cacheControl": "no-cache, no-store, max-age=0, must-revalidate",
+  "data": {
+    "availableTags": [
+      {
+        "tag": "exception",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "method",
+        "values": [
+          "POST"
+        ]
+      },
+      {
+        "tag": "error",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "outcome",
+        "values": [
+          "SUCCESS"
+        ]
+      },
+      {
+        "tag": "status",
+        "values": [
+          "201"
+        ]
+      }
+    ],
+    "baseUnit": "seconds",
+    "measurements": [
+      {
+        "statistic": "COUNT",
+        "value": 1
+      },
+      {
+        "statistic": "TOTAL_TIME",
+        "value": 0.1278275
+      },
+      {
+        "statistic": "MAX",
+        "value": 0.1278275
+      }
+    ],
+    "name": "http.server.requests"
+  }
+}

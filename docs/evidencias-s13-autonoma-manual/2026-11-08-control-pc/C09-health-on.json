@@ -1,0 +1,123 @@
+{
+  "fecha": "2026-11-09T03:43:44.128Z",
+  "publico": {
+    "url": "/actuator/health",
+    "status": 200,
+    "ms": 12.242,
+    "requestId": "ef2e3c0e",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:43:44 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "ef2e3c0e",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  "admin": {
+    "url": "/actuator/health",
+    "status": 200,
+    "ms": 24.105,
+    "requestId": "5ce3f1c0",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/vnd.spring-boot.actuator.v3+json",
+      "date": "Mon, 09 Nov 2026 03:43:44 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "5ce3f1c0",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "components": {
+        "db": {
+          "details": {
+            "database": "Oracle",
+            "validationQuery": "isValid()"
+          },
+          "status": "UP"
+        },
+        "diskSpace": {
+          "details": {
+            "total": 648945856512,
+            "free": 71729471488,
+            "threshold": 10485760,
+            "path": "C:\\Users\\USUARIO\\Desktop\\UPEU 2026-2\\Lenguaje de programacion II\\Proyecto Software\\PharmaSoft\\PharmaBackend\\.",
+            "exists": true
+          },
+          "status": "UP"
+        },
+        "livenessState": {
+          "status": "UP"
+        },
+        "ping": {
+          "status": "UP"
+        },
+        "readinessState": {
+          "status": "UP"
+        },
+        "redis": {
+          "details": {
+            "version": "7.4.12"
+          },
+          "status": "UP"
+        },
+        "ssl": {
+          "details": {
+            "expiringChains": [],
+            "invalidChains": [],
+            "validChains": []
+          },
+          "status": "UP"
+        }
+      },
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  "productos": {
+    "url": "/api/v1/productos?pagina=0",
+    "status": 200,
+    "ms": 33.495,
+    "requestId": "9be1abbf",
+    "headers": {
+      "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+      "connection": "keep-alive",
+      "content-type": "application/json",
+      "date": "Mon, 09 Nov 2026 03:43:44 GMT",
+      "expires": "0",
+      "keep-alive": "timeout=60",
+      "pragma": "no-cache",
+      "transfer-encoding": "chunked",
+      "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "9be1abbf",
+      "x-xss-protection": "0"
+    },
+    "data": {
+      "filas": 10
+    }
+  }
+}

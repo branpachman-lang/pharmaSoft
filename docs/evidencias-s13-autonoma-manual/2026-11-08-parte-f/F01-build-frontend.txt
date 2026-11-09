@@ -1,0 +1,39 @@
+
+> pharma-frontend@0.0.0 build
+> ng build --stats-json
+
+> Building...
+√ Building...
+Initial chunk files | Names             |  Raw size | Estimated transfer size
+chunk-B2xcAO2d.js   | -                 | 195.51 kB |                57.03 kB
+chunk-jlVrPlNa.js   | -                 |  92.04 kB |                23.42 kB
+main-2M5ST3S6.js    | main              |   6.57 kB |                 2.35 kB
+styles-AAJM6OEI.css | styles            |   1.66 kB |               589 bytes
+chunk-kiu1T7UI.js   | -                 |  54 bytes |                54 bytes
+
+                    | Initial total     | 295.84 kB |                83.44 kB
+
+Lazy chunk files    | Names             |  Raw size | Estimated transfer size
+chunk-ZRvhMvsP.js   | -                 |  50.33 kB |                10.26 kB
+chunk-CGB9DFhP.js   | ventas-routes     |  44.38 kB |                10.53 kB
+chunk-H9sCgaff.js   | productos-routes  |  21.25 kB |                 5.73 kB
+chunk-CKHWtNLi.js   | clientes-routes   |  16.99 kB |                 4.68 kB
+chunk-Ba_IaEzn.js   | categorias-routes |  14.07 kB |                 4.21 kB
+chunk-D_27yMlw.js   | ventas-categoria  |   9.79 kB |                 3.17 kB
+chunk-D44UmF1Q.js   | main-layout       |   8.12 kB |                 2.60 kB
+chunk-CV5rQxpj.js   | mi-cuenta         |   6.50 kB |                 2.22 kB
+chunk-CpDjEGwa.js   | login             |   5.44 kB |                 2.05 kB
+chunk-BrmMURgk.js   | -                 |   1.46 kB |               731 bytes
+chunk-D1Rk1yqu.js   | -                 |   1.37 kB |               729 bytes
+chunk-BH3lj0HO.js   | acceso-denegado   |   1.16 kB |               573 bytes
+chunk-Cy1_5RVi.js   | -                 | 843 bytes |               843 bytes
+chunk-CDrT6wiS.js   | -                 | 640 bytes |               640 bytes
+chunk-DnXUbyqO.js   | -                 | 597 bytes |               597 bytes
+...and 5 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [2.857 seconds] - 2026-11-09T04:06:45.465Z
+
+▲ [WARNING] src/app/features/ventas/pages/venta-form/venta-form.css exceeded maximum budget. Budget 4.00 kB was not met by 724 bytes with a total of 4.72 kB.
+
+
+Output location: C:\Users\USUARIO\Desktop\UPEU 2026-2\Lenguaje de programacion II\Proyecto Software\PharmaSoft\tmp\f-s13-verificacion\pharma-frontend-f0a0bd7\dist\pharma-frontend

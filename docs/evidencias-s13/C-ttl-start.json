@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T00:58:22.453Z",
+  "key": "categorias::pagina-0-7-nombre-asc",
+  "command": "redis-cli TTL categorias::pagina-0-7-nombre-asc",
+  "request": {
+    "status": 200,
+    "ms": 519.463,
+    "requestId": "844b07ca",
+    "cacheControl": "no-cache, no-store, max-age=0, must-revalidate"
+  },
+  "ttl": 60
+}

@@ -1,0 +1,3 @@
+2026-11-08 22:27:14,647 INFO  [4b4dd7c3] p.c.u.P.s.impl.VentaServiceImpl - Inicio registrar venta | lineas=1
+2026-11-08 22:27:14,807 INFO  [4b4dd7c3] p.c.u.P.s.impl.VentaServiceImpl - Venta persistida | ventaId=141 | lineas=1
+2026-11-08 22:27:14,842 INFO  [4b4dd7c3] p.c.u.P.config.RequestIdFilter - POST /api/v1/ventas -> 201 (349 ms)
