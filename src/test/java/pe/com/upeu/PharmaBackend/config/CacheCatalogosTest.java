@@ -113,7 +113,7 @@ class CacheCatalogosTest {
         servicioCategorias.listarPaginado(0, 10, "nombre", "asc");
         servicioProductos.listarPaginado(0, 10, "nombre", "asc");
         when(categorias.findById(1L)).thenReturn(Optional.of(categoria()));
-        when(categorias.save(any(Categoria.class))).thenAnswer(i -> i.getArgument(0));
+        when(categorias.saveAndFlush(any(Categoria.class))).thenAnswer(i -> i.getArgument(0));
         servicioCategorias.update(1L, new CategoriaRequestDTO("Nombre nuevo", "Prueba", true));
         servicioCategorias.listarPaginado(0, 10, "nombre", "asc");
         servicioProductos.listarPaginado(0, 10, "nombre", "asc");
