@@ -1,0 +1,71 @@
+{
+  "esquema": "PHARMA_S14",
+  "medicion": {
+    "sql": [
+      "Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.creado_por,p1_0.descripcion,p1_0.estado,p1_0.fecha_creacion,p1_0.fecha_modificacion,p1_0.modificado_por,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.nombre,p1_0.id offset ? rows fetch first ? rows only",
+      "Hibernate: select count(p1_0.id) from productos p1_0",
+      "Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.creado_por,p1_0.descripcion,p1_0.estado,p1_0.fecha_creacion,p1_0.fecha_modificacion,p1_0.modificado_por,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.nombre,p1_0.id offset ? rows fetch first ? rows only",
+      "Hibernate: select count(p1_0.id) from productos p1_0",
+      "Hibernate: select p1_0.id,p1_0.categoria_id,p1_0.creado_por,p1_0.descripcion,p1_0.estado,p1_0.fecha_creacion,p1_0.fecha_modificacion,p1_0.modificado_por,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.nombre,p1_0.id offset ? rows fetch first ? rows only",
+      "Hibernate: select count(p1_0.id) from productos p1_0",
+      "Hibernate: select v1_0.id,v1_0.cliente_id,v1_0.creado_por,v1_0.estado,v1_0.fecha,v1_0.total from ventas v1_0 where v1_0.fecha>=? and v1_0.fecha<=? order by v1_0.fecha desc,v1_0.id desc offset ? rows fetch first ? rows only",
+      "Hibernate: select count(v1_0.id) from ventas v1_0 where v1_0.fecha>=? and v1_0.fecha<=?"
+    ],
+    "solicitudes": [
+      {
+        "ruta": "/api/v1/productos?pagina=0&tamanio=20",
+        "http": 200,
+        "ms": 111.26,
+        "bytes": 5450,
+        "filas": 20,
+        "total": 5000,
+        "totalPaginas": 250,
+        "ultima": false
+      },
+      {
+        "ruta": "/api/v1/productos?pagina=0&tamanio=100",
+        "http": 200,
+        "ms": 42.06,
+        "bytes": 26884,
+        "filas": 100,
+        "total": 5000,
+        "totalPaginas": 50,
+        "ultima": false
+      },
+      {
+        "ruta": "/api/v1/productos?pagina=249&tamanio=20",
+        "http": 200,
+        "ms": 32.81,
+        "bytes": 5498,
+        "filas": 20,
+        "total": 5000,
+        "totalPaginas": 250,
+        "ultima": true
+      },
+      {
+        "ruta": "/api/v1/productos?pagina=0&tamanio=500",
+        "http": 409,
+        "ms": 21.77,
+        "bytes": 237,
+        "filas": null,
+        "total": null,
+        "totalPaginas": null,
+        "ultima": null
+      },
+      {
+        "ruta": "/api/v1/ventas/buscar?desde=2026-11-01&hasta=2026-11-12&pagina=0",
+        "http": 200,
+        "ms": 84.07,
+        "bytes": 1892,
+        "filas": 10,
+        "total": 637,
+        "totalPaginas": 64,
+        "ultima": false
+      }
+    ]
+  },
+  "fecha": "2026-11-12T09:05:59.7938127-05:00",
+  "ventasSinteticas": 20000,
+  "entorno": "Oracle local. Esquema de S13 inicializado aparte. Flyway con línea base 3 y migración V4. Caché de la app desactivada para medir Oracle.",
+  "productosSinteticos": 5000
+}

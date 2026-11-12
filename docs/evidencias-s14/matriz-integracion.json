@@ -1,0 +1,169 @@
+{
+  "I-01-a-I-06": [
+    {
+      "casos": [
+        "I-01",
+        "I-02",
+        "I-03",
+        "I-04",
+        "I-05",
+        "I-06"
+      ],
+      "ventaId": 20002,
+      "productoId": 5007,
+      "stockInicial": 10,
+      "stockFinal": 8,
+      "total": 25,
+      "unidadesReporte": 2,
+      "evento": {
+        "id": 22,
+        "fecha": "2026-11-12T09:24:13.061408",
+        "usuario": "vendedor_s14",
+        "accion": "VENTA_REGISTRADA",
+        "entidad": "Venta",
+        "entidadId": 20002,
+        "detalle": "total=25.0 | items=1",
+        "requestId": "ffd24778"
+      },
+      "precio": {
+        "id": 23,
+        "fecha": "2026-11-12T09:24:13.457741",
+        "usuario": "admin_s14",
+        "accion": "PRECIO_MODIFICADO",
+        "entidad": "Producto",
+        "entidadId": 5007,
+        "detalle": "12.5 -> 15",
+        "requestId": "faf3d7c5"
+      },
+      "rollbackHttp": 409,
+      "erroresConsola": 0
+    },
+    {
+      "casos": [
+        "I-01",
+        "I-02",
+        "I-03",
+        "I-04",
+        "I-05",
+        "I-06"
+      ],
+      "ventaId": 20003,
+      "productoId": 5010,
+      "stockInicial": 10,
+      "stockFinal": 8,
+      "total": 25,
+      "unidadesReporte": 2,
+      "evento": {
+        "id": 34,
+        "fecha": "2026-11-12T09:24:24.027645",
+        "usuario": "vendedor_s14",
+        "accion": "VENTA_REGISTRADA",
+        "entidad": "Venta",
+        "entidadId": 20003,
+        "detalle": "total=25.0 | items=1",
+        "requestId": "1e15f8fb"
+      },
+      "precio": {
+        "id": 35,
+        "fecha": "2026-11-12T09:24:24.25758",
+        "usuario": "admin_s14",
+        "accion": "PRECIO_MODIFICADO",
+        "entidad": "Producto",
+        "entidadId": 5010,
+        "detalle": "12.5 -> 15",
+        "requestId": "5404876b"
+      },
+      "rollbackHttp": 409,
+      "erroresConsola": 0
+    },
+    {
+      "casos": [
+        "I-01",
+        "I-02",
+        "I-03",
+        "I-04",
+        "I-05",
+        "I-06"
+      ],
+      "ventaId": 20004,
+      "productoId": 5013,
+      "stockInicial": 10,
+      "stockFinal": 8,
+      "total": 25,
+      "unidadesReporte": 2,
+      "evento": {
+        "id": 46,
+        "fecha": "2026-11-12T09:24:32.948854",
+        "usuario": "vendedor_s14",
+        "accion": "VENTA_REGISTRADA",
+        "entidad": "Venta",
+        "entidadId": 20004,
+        "detalle": "total=25.0 | items=1",
+        "requestId": "f5c63db2"
+      },
+      "precio": {
+        "id": 47,
+        "fecha": "2026-11-12T09:24:33.200665",
+        "usuario": "admin_s14",
+        "accion": "PRECIO_MODIFICADO",
+        "entidad": "Producto",
+        "entidadId": 5013,
+        "detalle": "12.5 -> 15",
+        "requestId": "61fa82ae"
+      },
+      "rollbackHttp": 409,
+      "erroresConsola": 0
+    }
+  ],
+  "I-07": [
+    {
+      "usuario": "vendedor_s14",
+      "ruta": "/ventas/nueva",
+      "reloj": "Playwright Clock"
+    },
+    {
+      "usuario": "vendedor_s14",
+      "ruta": "/ventas/nueva",
+      "reloj": "Playwright Clock"
+    },
+    {
+      "usuario": "vendedor_s14",
+      "ruta": "/ventas/nueva",
+      "reloj": "Playwright Clock"
+    }
+  ],
+  "I-08": [
+    {
+      "paginaInicial": 5,
+      "paginaConFiltro": 1,
+      "url": "?pagina=0&desde=2026-11-01&hasta=2026-11-12"
+    },
+    {
+      "paginaInicial": 5,
+      "paginaConFiltro": 1,
+      "url": "?pagina=0&desde=2026-11-01&hasta=2026-11-12"
+    },
+    {
+      "paginaInicial": 5,
+      "paginaConFiltro": 1,
+      "url": "?pagina=0&desde=2026-11-01&hasta=2026-11-12"
+    }
+  ],
+  "login-fallido": [
+    {
+      "http": 401,
+      "accion": "LOGIN_FALLIDO",
+      "requestId": "52a1a1d2"
+    },
+    {
+      "http": 401,
+      "accion": "LOGIN_FALLIDO",
+      "requestId": "fbcba2d9"
+    },
+    {
+      "http": 401,
+      "accion": "LOGIN_FALLIDO",
+      "requestId": "7b40d250"
+    }
+  ]
+}
