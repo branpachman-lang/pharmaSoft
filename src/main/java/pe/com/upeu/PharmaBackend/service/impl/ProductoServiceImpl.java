@@ -5,7 +5,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import pe.com.upeu.PharmaBackend.auditoria.EventoAuditoria;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.ProductoRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.ProductoResponseDTO;
@@ -18,6 +20,7 @@ import pe.com.upeu.PharmaBackend.repository.CategoriaRepository;
 import pe.com.upeu.PharmaBackend.repository.ProductoRepository;
 import pe.com.upeu.PharmaBackend.service.service.ProductoService;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Service
@@ -27,9 +30,13 @@ public class ProductoServiceImpl implements ProductoService {
     private final ProductoRepository productoRepository;
     private final CategoriaRepository categoriaRepository;
 
-    public ProductoServiceImpl(ProductoRepository productoRepository, CategoriaRepository categoriaRepository) {
+    private final ApplicationEventPublisher eventos;
+
+    public ProductoServiceImpl(ProductoRepository productoRepository, CategoriaRepository categoriaRepository,
+                               ApplicationEventPublisher eventos) {
         this.productoRepository = productoRepository;
         this.categoriaRepository = categoriaRepository;
+        this.eventos = eventos;
     }
 
     @Override
@@ -74,6 +81,7 @@ public class ProductoServiceImpl implements ProductoService {
         );
         validarCategoriaActiva(categoria);
 
+        BigDecimal precioAnterior = producto.getPrecio();
         producto.setNombre(nombre);
         producto.setDescripcion(t.getDescripcion());
         producto.setPrecio(t.getPrecio());
@@ -81,13 +89,17 @@ public class ProductoServiceImpl implements ProductoService {
         producto.setEstado(t.getEstado());
         producto.setCategoria(categoria);
 
-        Producto productoActualizado = productoRepository.save(producto);
+        Producto productoActualizado = productoRepository.saveAndFlush(producto);
+        if (precioAnterior.compareTo(productoActualizado.getPrecio()) != 0) {
+            eventos.publishEvent(EventoAuditoria.de("PRECIO_MODIFICADO", "Producto", id,
+                    precioAnterior + " -> " + productoActualizado.getPrecio()));
+        }
         return convertirResponse(productoActualizado);
     }
 
     @Override
     @Transactional(readOnly = true)
-    @Cacheable(cacheNames = "productos", key = "'id-' + #id")
+    @Cacheable(cacheNames = "productos", key = "'s14-id-' + #id")
     public ProductoResponseDTO read(Long id) {
         Producto producto = productoRepository.findById(id).orElseThrow(() ->
                 new RecursoNoEncontradoException("Producto no encontrado con el ID: " + id)
@@ -107,11 +119,12 @@ public class ProductoServiceImpl implements ProductoService {
         }
         producto.setEstado(false);
         productoRepository.save(producto);
+        eventos.publishEvent(EventoAuditoria.de("PRODUCTO_ELIMINADO", "Producto", id, producto.getNombre()));
     }
 
     @Override
     @Transactional(readOnly = true)
-    @Cacheable(cacheNames = "productos", key = "'todas'")
+    @Cacheable(cacheNames = "productos", key = "'s14-todas'")
     public Iterable<ProductoResponseDTO> readAll() {
         return productoRepository.findAll().stream()
                 .map(this::convertirResponse)
@@ -121,11 +134,20 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     @Transactional(readOnly = true)
     @Cacheable(cacheNames = "productos",
-            key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion")
+            key = "'s14-pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion + '-categoria-null'")
     public PaginaResponseDTO<ProductoResponseDTO> listarPaginado(
             int pagina, int tamanio, String ordenarPor, String direccion) {
-        if (pagina < 0 || tamanio < 1) {
-            throw new ReglaNegocioException("La página debe ser mayor o igual a 0 y el tamaño mayor que 0");
+        return listarPaginado(pagina, tamanio, ordenarPor, direccion, null);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    @Cacheable(cacheNames = "productos",
+            key = "'s14-pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion + '-categoria-' + #categoriaId")
+    public PaginaResponseDTO<ProductoResponseDTO> listarPaginado(
+            int pagina, int tamanio, String ordenarPor, String direccion, Long categoriaId) {
+        if (pagina < 0 || tamanio < 1 || tamanio > 100) {
+            throw new ReglaNegocioException("La página debe ser mayor o igual a 0 y el tamaño debe estar entre 1 y 100");
         }
         if (!CAMPOS_ORDENABLES.contains(ordenarPor)) {
             throw new ReglaNegocioException("Campo de ordenamiento no permitido: " + ordenarPor);
@@ -136,11 +158,10 @@ public class ProductoServiceImpl implements ProductoService {
         Sort sort = direccion.equalsIgnoreCase("asc")
                 ? Sort.by(ordenarPor).ascending() : Sort.by(ordenarPor).descending();
         if (!ordenarPor.equals("id")) sort = sort.and(Sort.by("id"));
-        Page<Producto> resultado = productoRepository.findAll(PageRequest.of(pagina, tamanio, sort));
-        return new PaginaResponseDTO<>(
-                resultado.getContent().stream().map(this::convertirResponse).toList(),
-                resultado.getNumber(), resultado.getSize(), resultado.getTotalElements(),
-                resultado.getTotalPages(), resultado.isLast());
+        var solicitud = PageRequest.of(pagina, tamanio, sort);
+        Page<Producto> resultado = categoriaId == null ? productoRepository.findAll(solicitud)
+                : productoRepository.findByCategoriaId(categoriaId, solicitud);
+        return PaginaResponseDTO.de(resultado.map(this::convertirResponse));
     }
 
     private void validarCategoriaActiva(Categoria categoria) {
@@ -160,7 +181,9 @@ public class ProductoServiceImpl implements ProductoService {
                 producto.getCategoria().getId(),
                 producto.getCategoria().getNombre(),
                 producto.getFechaCreacion(),
-                producto.getFechaModificacion()
+                producto.getFechaModificacion(),
+                producto.getCreadoPor(),
+                producto.getModificadoPor()
         );
     }
 }

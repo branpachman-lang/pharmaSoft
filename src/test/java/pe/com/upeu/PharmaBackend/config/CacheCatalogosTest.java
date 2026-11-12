@@ -143,7 +143,7 @@ class CacheCatalogosTest {
         cliente.setApellidos("Pacho");
         when(clientes.findById(1L)).thenReturn(Optional.of(cliente));
         when(productos.findById(2L)).thenReturn(Optional.of(producto()));
-        when(productos.descontarStockSiAlcanza(2L, 1)).thenReturn(1);
+        when(productos.descontarStockSiAlcanza(2L, 1, "sistema")).thenReturn(1);
         when(ventas.save(any(Venta.class))).thenAnswer(i -> i.getArgument(0));
         servicioVentas.registrar(new VentaRequestDTO(1L, List.of(new DetalleVentaRequestDTO(2L, 1))));
         servicioProductos.listarPaginado(0, 10, "nombre", "asc");

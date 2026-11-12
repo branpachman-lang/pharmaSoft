@@ -7,7 +7,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import pe.com.upeu.PharmaBackend.auditoria.EventoAuditoria;
+import pe.com.upeu.PharmaBackend.config.AuditoriaConfig;
 import org.springframework.transaction.annotation.Transactional;
 import pe.com.upeu.PharmaBackend.dto.DetalleVentaRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.DetalleVentaResponseDTO;
@@ -41,6 +44,7 @@ public class VentaServiceImpl implements VentaService {
     private final VentaRepository ventaRepository;
     private final ClienteRepository clienteRepository;
     private final ProductoRepository productoRepository;
+    private final ApplicationEventPublisher eventos;
 
     private static final Set<String> CAMPOS_ORDENABLES = Set.of("id", "fecha", "total", "estado");
     private static final String ORDEN_POR_DEFECTO = "fecha";
@@ -48,11 +52,12 @@ public class VentaServiceImpl implements VentaService {
     public VentaServiceImpl(
             VentaRepository ventaRepository,
             ClienteRepository clienteRepository,
-            ProductoRepository productoRepository) {
+            ProductoRepository productoRepository, ApplicationEventPublisher eventos) {
 
         this.ventaRepository = ventaRepository;
         this.clienteRepository = clienteRepository;
         this.productoRepository = productoRepository;
+        this.eventos = eventos;
     }
 
     @Override
@@ -73,6 +78,7 @@ public class VentaServiceImpl implements VentaService {
         venta.setEstado(EstadoVenta.REGISTRADA);
 
         BigDecimal total = BigDecimal.ZERO;
+        String vendedor = AuditoriaConfig.usuarioActual();
 
         for (DetalleVentaRequestDTO item: request.getDetalles()) {
             Producto producto = productoRepository.findById(item.getProductoId()).orElseThrow(() ->
@@ -84,7 +90,7 @@ public class VentaServiceImpl implements VentaService {
 
             // El UPDATE condicional decide con el stock actual de la base de datos.
             // Toda la transacción se revierte si falla una línea posterior.
-            if (productoRepository.descontarStockSiAlcanza(producto.getId(), item.getCantidad()) != 1) {
+            if (productoRepository.descontarStockSiAlcanza(producto.getId(), item.getCantidad(), vendedor) != 1) {
                 throw new ReglaNegocioException("Stock insuficiente para " + producto.getNombre()
                         + ". Vuelve a revisar las unidades disponibles.");
             }
@@ -106,7 +112,9 @@ public class VentaServiceImpl implements VentaService {
 
         venta.setTotal(total);
 
-        Venta guardada =ventaRepository.save(venta);
+        Venta guardada = ventaRepository.save(venta);
+        eventos.publishEvent(EventoAuditoria.de("VENTA_REGISTRADA", "Venta", guardada.getId(),
+                "total=" + guardada.getTotal() + " | items=" + guardada.getDetalles().size()));
         log.info("Venta persistida | ventaId={} | lineas={}",
                 guardada.getId(), guardada.getDetalles().size());
 
@@ -264,7 +272,8 @@ public class VentaServiceImpl implements VentaService {
                 clienteNombre,
                 venta.getEstado().name(),
                 venta.getTotal(),
-                detalles
+                detalles,
+                venta.getCreadoPor()
         );
     }
 }

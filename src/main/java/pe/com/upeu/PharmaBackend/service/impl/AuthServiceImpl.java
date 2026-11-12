@@ -4,9 +4,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pe.com.upeu.PharmaBackend.auditoria.AuditoriaListener;
+import pe.com.upeu.PharmaBackend.auditoria.EventoAuditoria;
 import pe.com.upeu.PharmaBackend.dto.auth.LoginRequestDTO;
 import pe.com.upeu.PharmaBackend.dto.auth.LoginResponseDTO;
 import pe.com.upeu.PharmaBackend.dto.auth.UsuarioResponseDTO;
@@ -31,17 +34,19 @@ public class AuthServiceImpl implements AuthService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
     private final PasswordEncoder passwordEncoder;
+    private final AuditoriaListener auditoria;
     public AuthServiceImpl(
             AuthenticationManager authenticationManager,
             JwtService jwtService,
             UsuarioRepository usuarioRepository,
             UsuarioMapper usuarioMapper,
-            PasswordEncoder passwordEncoder) {
+            PasswordEncoder passwordEncoder, AuditoriaListener auditoria) {
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
         this.usuarioRepository = usuarioRepository;
         this.usuarioMapper = usuarioMapper;
         this.passwordEncoder = passwordEncoder;
+        this.auditoria = auditoria;
     }
     /*
      * 1. AuthenticationManager busca al usuario (UsuarioDetailsService),
@@ -57,12 +62,19 @@ public class AuthServiceImpl implements AuthService {
     public LoginResponseDTO login(LoginRequestDTO request) {
         String username = request.getUsername().trim();
         log.info("Intento de inicio de sesión: usuario={}", username);
-        Authentication autenticacion = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, request.getPassword()));
+        Authentication autenticacion;
+        try {
+            autenticacion = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(username, request.getPassword()));
+        } catch (AuthenticationException ex) {
+            auditoria.registrar(EventoAuditoria.login("LOGIN_FALLIDO", username));
+            throw ex;
+        }
         UserDetails principal = (UserDetails) autenticacion.getPrincipal();
         Usuario usuario = buscar(principal.getUsername());
         String token = jwtService.generarToken(principal);
         List<String> roles = usuarioMapper.nombresRoles(usuario.getRoles());
+        auditoria.registrar(EventoAuditoria.login("LOGIN_EXITOSO", usuario.getUsername()));
         log.info("Inicio de sesión correcto: usuario={} roles={}",
                 usuario.getUsername(), roles);
         return new LoginResponseDTO(

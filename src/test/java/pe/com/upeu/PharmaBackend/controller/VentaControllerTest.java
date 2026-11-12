@@ -21,7 +21,7 @@ class VentaControllerTest {
     void buscarSinFiltrosDevuelveLaPaginaQueEsperaAngular() throws Exception {
         VentaService servicio = mock(VentaService.class);
         var venta = new VentaResponseDTO(5L, LocalDateTime.of(2026, 10, 11, 12, 0),
-                1L, "Ana Pacho", "REGISTRADA", new BigDecimal("16.50"), List.of());
+                1L, "Ana Pacho", "REGISTRADA", new BigDecimal("16.50"), List.of(), null);
         var pagina = new PaginaResponseDTO<>(List.of(venta), 0, 10, 1, 1, true);
         when(servicio.buscarVentas(isNull(), isNull(), isNull(), isNull(),
                 eq(0), eq(10), eq("fecha"), eq("desc"))).thenReturn(pagina);

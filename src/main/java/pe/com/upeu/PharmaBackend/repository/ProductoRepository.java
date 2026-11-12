@@ -1,5 +1,7 @@
 package pe.com.upeu.PharmaBackend.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -13,17 +15,18 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     boolean existsByNombreIgnoreCaseAndIdNot(String nombre, long id);
 
     List<Producto> findByCategoriaId(Long categoriaId);
+    Page<Producto> findByCategoriaId(Long categoriaId, Pageable pageable);
     boolean existsByCategoriaId(Long categoriaId);
 
     @Modifying(flushAutomatically = true)
     @Query("""
             update Producto p
-               set p.stock = p.stock - :cantidad
+               set p.stock = p.stock - :cantidad, p.modificadoPor = :usuario, p.fechaModificacion = local datetime
              where p.id = :productoId
                and p.estado = true
                and p.stock >= :cantidad
             """)
     int descontarStockSiAlcanza(@Param("productoId") Long productoId,
-                                @Param("cantidad") int cantidad);
+                                @Param("cantidad") int cantidad, @Param("usuario") String usuario);
 
 }

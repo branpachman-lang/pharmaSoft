@@ -6,4 +6,7 @@ import pe.com.upeu.PharmaBackend.service.generic.CrudService;
 
 public interface ProductoService extends CrudService<ProductoRequestDTO, ProductoResponseDTO, Long> {
     PaginaResponseDTO<ProductoResponseDTO> listarPaginado(int pagina, int tamanio, String ordenarPor, String direccion);
+
+    PaginaResponseDTO<ProductoResponseDTO> listarPaginado(
+            int pagina, int tamanio, String ordenarPor, String direccion, Long categoriaId);
 }

@@ -8,7 +8,12 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "productos")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,6 +49,15 @@ public class Producto {
 
     @Column(name = "fecha_modificacion")
     private LocalDateTime fechaModificacion;
+
+
+    @CreatedBy
+    @Column(name = "creado_por", length = 50, updatable = false)
+    private String creadoPor;
+
+    @LastModifiedBy
+    @Column(name = "modificado_por", length = 50)
+    private String modificadoPor;
 
     @PrePersist
     public void prePersist() {

@@ -62,14 +62,14 @@ public class CategoriaServiceImpl implements CategoriaService {
         categoria.setNombre(t.getNombre());
         categoria.setDescripcion(t.getDescripcion());
         categoria.setEstado(t.getEstado());
-        Categoria catActualizada = categoriaRepository.save(categoria);
+        Categoria catActualizada = categoriaRepository.saveAndFlush(categoria);
 
         return convertirResponse(catActualizada);
     }
 
     @Override
     @Transactional(readOnly = true)
-    @Cacheable(cacheNames = "categorias", key = "'id-' + #p0")
+    @Cacheable(cacheNames = "categorias", key = "'s14-id-' + #p0")
     public CategoriaResponseDTO read(Long aLong) {
         Categoria categoria = categoriaRepository.findById(aLong).
                 orElseThrow(()->
@@ -100,7 +100,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     @Transactional(readOnly = true)
-    @Cacheable(cacheNames = "categorias", key = "'todas'")
+    @Cacheable(cacheNames = "categorias", key = "'s14-todas'")
     public Iterable<CategoriaResponseDTO> readAll() {
         return categoriaRepository.findAll().
                 stream().
@@ -110,7 +110,7 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Transactional(readOnly = true)
     @Cacheable(cacheNames = "categorias",
-            key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion")
+            key = "'s14-pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion")
     public PaginaResponseDTO<CategoriaResponseDTO> listarPaginado(
             int pagina, int tamanio, String ordenarPor, String direccion) {
         return listarPaginado(pagina, tamanio, ordenarPor, direccion, false);
@@ -119,7 +119,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Override
     @Transactional(readOnly = true)
     @Cacheable(cacheNames = "categorias",
-            key = "'pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion + '-activas-' + #soloActivas")
+            key = "'s14-pagina-' + #pagina + '-' + #tamanio + '-' + #ordenarPor + '-' + #direccion + '-activas-' + #soloActivas")
     public PaginaResponseDTO<CategoriaResponseDTO> listarPaginado(
             int pagina, int tamanio, String ordenarPor, String direccion, boolean soloActivas) {
         if (pagina < 0 || tamanio < 1) {
@@ -157,7 +157,9 @@ public class CategoriaServiceImpl implements CategoriaService {
                 categoria.getDescripcion(),
                 categoria.getEstado(),
                 categoria.getFechaCreacion(),
-                categoria.getFechaModificacion()
+                categoria.getFechaModificacion(),
+                categoria.getCreadoPor(),
+                categoria.getModificadoPor()
         );
     }
 }

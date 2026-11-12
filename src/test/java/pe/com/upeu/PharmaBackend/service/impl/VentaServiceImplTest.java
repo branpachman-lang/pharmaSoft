@@ -35,6 +35,7 @@ class VentaServiceImplTest {
     @Mock VentaRepository ventas;
     @Mock ClienteRepository clientes;
     @Mock ProductoRepository productos;
+    @Mock org.springframework.context.ApplicationEventPublisher eventos;
     @InjectMocks VentaServiceImpl servicio;
 
     private final Cliente cliente = cliente();
@@ -44,7 +45,7 @@ class VentaServiceImplTest {
     void registraDetalleConPrecioDelServidorYDescuentoCondicional() {
         when(clientes.findById(1L)).thenReturn(Optional.of(cliente));
         when(productos.findById(2L)).thenReturn(Optional.of(producto));
-        when(productos.descontarStockSiAlcanza(2L, 3)).thenReturn(1);
+        when(productos.descontarStockSiAlcanza(2L, 3, "sistema")).thenReturn(1);
         when(ventas.save(any(Venta.class))).thenAnswer(invocacion -> {
             Venta venta = invocacion.getArgument(0);
             venta.setId(9L);
@@ -58,7 +59,7 @@ class VentaServiceImplTest {
         assertEquals(new BigDecimal("5.50"), resultado.getDetalles().getFirst().getPrecio());
         assertEquals(new BigDecimal("16.50"), resultado.getDetalles().getFirst().getSubtotal());
         assertEquals(EstadoVenta.REGISTRADA.name(), resultado.getEstado());
-        verify(productos).descontarStockSiAlcanza(2L, 3);
+        verify(productos).descontarStockSiAlcanza(2L, 3, "sistema");
         verify(ventas).save(any(Venta.class));
     }
 
@@ -66,7 +67,7 @@ class VentaServiceImplTest {
     void noGuardaSiElStockActualYaNoAlcanza() {
         when(clientes.findById(1L)).thenReturn(Optional.of(cliente));
         when(productos.findById(2L)).thenReturn(Optional.of(producto));
-        when(productos.descontarStockSiAlcanza(2L, 20)).thenReturn(0);
+        when(productos.descontarStockSiAlcanza(2L, 20, "sistema")).thenReturn(0);
 
         var error = assertThrows(ReglaNegocioException.class,
                 () -> servicio.registrar(new VentaRequestDTO(1L,

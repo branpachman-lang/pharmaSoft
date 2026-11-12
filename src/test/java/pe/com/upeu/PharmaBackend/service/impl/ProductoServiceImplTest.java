@@ -29,6 +29,7 @@ import static org.mockito.Mockito.*;
 class ProductoServiceImplTest {
     @Mock ProductoRepository productoRepository;
     @Mock CategoriaRepository categoriaRepository;
+    @Mock org.springframework.context.ApplicationEventPublisher eventos;
     @InjectMocks ProductoServiceImpl servicio;
 
     private Categoria categoria;
