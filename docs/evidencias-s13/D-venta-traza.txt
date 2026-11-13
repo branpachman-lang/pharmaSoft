@@ -1,3 +1,0 @@
-2026-11-08 19:51:09,362 INFO  [317afa06] p.c.u.P.s.impl.VentaServiceImpl - Inicio registrar venta | lineas=1
-2026-11-08 19:51:09,428 INFO  [317afa06] p.c.u.P.s.impl.VentaServiceImpl - Venta persistida | ventaId=121 | lineas=1
-2026-11-08 19:51:09,438 INFO  [317afa06] p.c.u.P.config.RequestIdFilter - POST /api/v1/ventas -> 201 (127 ms)

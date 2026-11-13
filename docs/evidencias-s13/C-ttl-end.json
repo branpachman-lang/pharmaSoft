@@ -1,6 +1,0 @@
-{
-  "at": "2026-11-09T01:02:25.748Z",
-  "key": "categorias::pagina-0-7-nombre-asc",
-  "command": "redis-cli TTL categorias::pagina-0-7-nombre-asc",
-  "ttl": -2
-}
