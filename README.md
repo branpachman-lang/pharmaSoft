@@ -67,7 +67,3 @@ No guardar valores reales en Git, capturas, colecciones ni el informe. `applicat
 1. **P1 - HTTPS y accesos privados.** Centralizar API y Oracle; publicar únicamente Nginx por HTTPS. Cambiar cuentas de clase, gestionar secretos y limitar roles por local. Usar VPN o red privada para administración.
 2. **P1 - Respaldos Oracle y recuperación.** Automatizar copias cifradas fuera del servidor y ensayar restauración. Proponer RPO de 1 hora y RTO de 4 horas, sujetos a aprobación de gerencia. No son garantías medidas en esta entrega.
 3. **P2 - Caché compartida y alertas.** Usar un Redis compartido por las instancias para que las invalidaciones alcancen a los tres locales. Alertar sobre health, errores 5xx y latencia; distinguir modo degradado de caída de Oracle. La venta siempre valida stock en Oracle. El sistema actual no soporta ventas sin conexión: definir procedimiento de contingencia por cortes de Internet.
-
-## Actividad autónoma S13
-
-El [informe PDF](docs/informe-s13.pdf) y su [versión editable](docs/Pacho_LP2_S13_Autonoma_Editable.docx) reúnen las dos rondas. La [guía paso a paso](docs/Guia_S13_Autonoma_Paso_a_Paso.pdf) y el [inventario de evidencias](docs/Checklist_capturas_S13_Autonoma.md) indican cómo reproducir cada comprobación.
