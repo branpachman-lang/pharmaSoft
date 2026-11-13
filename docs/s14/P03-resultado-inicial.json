@@ -1,0 +1,19 @@
+{
+  "fechaUtc": "2026-11-13T17:47:58.629Z",
+  "comando": "npx.cmd playwright test --repeat-each=3",
+  "repeticiones": [
+    7,
+    6,
+    7
+  ],
+  "aprobadas": 20,
+  "fallidas": 1,
+  "fallo": {
+    "archivo": "e2e/autenticacion.spec.ts",
+    "caso": "al iniciar sesión vuelve a Ventas y la expiración conserva la ruta de la venta",
+    "repeticion": 2,
+    "inicioUtc": "2026-11-13T17:48:10.949Z",
+    "duracionMs": 12384,
+    "resultado": "El formulario permaneció en «Ingresando…» y no apareció el botón «Cerrar sesión»."
+  }
+}

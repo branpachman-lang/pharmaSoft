@@ -47,6 +47,18 @@ build/
 !/docs/incidencias.md
 !/docs/evidencias-s14/
 !/docs/Pacho_LP2_S14_Practica.pdf
+!/docs/Pacho_LP2_S14_Practica_Editable.docx
+!/docs/s14/
+/docs/s14/*
+!/docs/s14/Guia_S14_Practica_Paso_a_Paso.md
+!/docs/s14/Iniciar-Laboratorio-S14.ps1
+!/docs/s14/HashLaboratorio.java
+!/docs/s14/P03-resultado-inicial.json
+!/docs/s14/P03-resultado-final.json
+!/docs/s14/postman/
+/docs/s14/postman/*
+!/docs/s14/postman/PharmaSoft-S14-Practica.postman_collection.json
+!/docs/s14/postman/PharmaSoft-S14-Local.postman_environment.json
 !/docs/Guia_S13_Autonoma_Paso_a_Paso.*
 !/docs/Checklist_capturas_S13_Autonoma.md
 
